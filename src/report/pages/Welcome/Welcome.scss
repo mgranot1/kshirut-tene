@@ -1,0 +1,103 @@
+.welcome {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+
+  @media (min-width: 1430px) {
+    background-color: white;
+    width: var(--desktop-width);
+    height: var(--desktop-height);
+    border-radius: 1.875rem;
+    box-shadow: 0.125rem 0.125rem 1rem 0 #0b1a371a;
+    box-shadow: -0.125rem -0.125rem 1rem 0 #0b1a371a;
+  }
+
+  .welcome__header {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem;
+    z-index: 3;
+    background-color: #f9fafb;
+    box-shadow: -20vmin -20vmin white;
+    border-radius: 0 0 12.5rem 12.5rem;
+
+    @media (min-width: 1430px) {
+      border-radius: 1.875rem 1.875rem 12.5rem 12.5rem;
+      box-shadow: 0.125rem 0.125rem 1rem 0 #0b1a371a;
+      box-shadow: -0.125rem -0.125rem 1rem 0 #0b1a371a;
+    }
+
+    .welcome__vehichel1 {
+      position: absolute;
+      width: 20rem;
+      top: 70%;
+      left: 20%;
+
+      @media (min-width: 1430px) {
+        width: 30rem;
+      }
+    }
+
+    .welcome__vehichel2 {
+      position: absolute;
+      width: 10rem;
+      top: 1%;
+      right: 0;
+
+      @media (min-width: 1430px) {
+        width: 20rem;
+      }
+    }
+
+    .welcome__vehichel3 {
+      position: absolute;
+      top: 45%;
+      width: 10rem;
+      left: 0;
+
+      @media (min-width: 1430px) {
+        width: 15rem;
+        top: 30%;
+      }
+    }
+  }
+
+  .welcome__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+
+    .welcome__title {
+      font-weight: 400;
+      font-size: 2.875rem;
+      line-height: 4.2225rem;
+    }
+
+    .welcome__subTitle {
+      margin-top: 0.5rem;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 1.84rem;
+    }
+  }
+
+  .welcome__button {
+    width: 100%;
+    padding: 2rem;
+
+    @media (min-width: 1430px) {
+      width: 80%;
+    }
+  }
+}

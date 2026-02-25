@@ -1,0 +1,16 @@
+.expandedKshirutDevelopement {
+  display: flex;
+  height: 100%;
+  min-width: 100%;
+  .expandedKshirutDevelopement__PieGraph {
+    min-width: 50%;
+    cursor: pointer;
+  }
+  .expandedKshirutDevelopement__separateLine {
+    min-height: 100%;
+    border-left: solid #e3e5e9 0.1rem;
+  }
+  .expandedKshirutDevelopement__barGraph {
+    min-width: 50%;
+  }
+}

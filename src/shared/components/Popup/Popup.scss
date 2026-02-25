@@ -1,0 +1,27 @@
+.dialog {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  background-color: rgb(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.dialogBlock {
+  min-width: 200px;
+  min-height: 100px;
+  border-radius: 0.4rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  animation: dialogFadeIn 0.5s;
+}
+
+.dialogBlock.yrm {
+  padding: 0;
+}

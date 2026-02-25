@@ -1,0 +1,57 @@
+.notification__container{
+    color: var(--general-grey-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    
+    .notification__right{
+        width: 70%;
+
+        .notification__title{
+            // font-size: 1.0625rem;
+            // font-weight: 700;
+            // overflow: hidden;
+            // width: 100%;
+            // display: block;
+            // white-space: nowrap;
+            // text-overflow: ellipsis;
+            .notification__error{
+                color: red;
+                display: flex;
+            }
+
+
+        }
+        .notification__desc{
+            font-size: 0.9375rem;
+            font-weight: 400;
+            overflow: hidden;
+            width: 100%;
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+
+
+        }
+    
+    
+    }
+    .notification__left{
+        width: 25%;
+        // background-color: pink;
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        font-size: 0.9375rem;
+        font-weight: 400;
+    
+
+    }
+
+}
+.notification__watched{
+    color: rgba(99, 99, 114, 0.438);
+}

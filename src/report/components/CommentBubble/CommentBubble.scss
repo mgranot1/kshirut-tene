@@ -1,0 +1,73 @@
+.commentBubble.right-bubble {
+  background-color: #3d99fd;
+  position: relative;
+  padding: 0.4rem 1.2rem;
+  margin: 0.1rem 0.5rem 0.1rem 0.1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  text-align: right;
+  max-width: -webkit-fill-available;
+
+  .comments__text {
+    color: white;
+    font-family: "Heebo";
+    display: block;
+    max-width: 70vw;
+    word-wrap: break-word;
+    white-space: pre-line;
+  }
+
+  .comments__time {
+    color: #e5f1ff;
+    font-family: "Heebo";
+    font-size: 0.8rem;
+  }
+
+  &.last {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.commentBubble.right-bubble.last::after {
+  content: url("@assets/report/chatRight.svg");
+  position: absolute;
+  right: -0.5625rem;
+  bottom: -0.625rem;
+}
+
+.commentBubble.left-bubble {
+  background-color: #f9fafb;
+  width: max-content;
+  max-width: 60vw;
+  padding: 0.4rem 1.2rem;
+  margin: 0.1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  text-align: left;
+  position: relative;
+
+  .comments__text {
+    color: #3b4c66;
+    font-family: "Heebo";
+    display: block;
+    max-width: 70vw;
+    word-wrap: break-word;
+  }
+
+  .comments__time {
+    color: #85858b;
+    font-family: "Heebo";
+    font-size: 0.8rem;
+  }
+
+  &.last {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.commentBubble.left-bubble.last::after {
+  content: url("@assets/report/chatLeft.svg");
+  position: absolute;
+  left: -0.7rem;
+  bottom: -0.75rem;
+}

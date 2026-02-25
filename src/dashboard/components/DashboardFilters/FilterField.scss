@@ -1,0 +1,48 @@
+.FilterField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  & > .disabled {
+    color: var(--disabled-text-color);
+    background-color: var(--dashboard-background-secondary-color);
+  }
+
+  .FilterField__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 7px 25px 7px 0px;
+
+    .FilterField__title {
+      font-weight: 500;
+    }
+
+    .FilterField__expandIcon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+
+      .FilterField__selectedNumTag {
+        background-color: var(--secondary-bg-container-color);
+        border: 1px solid var(--general-border-color);
+        border-radius: 4px;
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+
+  .FilterField__options {
+    max-height: 35vh;
+    overflow-y: scroll;
+    width: 130%;
+  }
+}

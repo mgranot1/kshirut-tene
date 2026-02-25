@@ -1,0 +1,44 @@
+.progress-circular {
+
+    &__container {
+        min-width: 100px;
+        position: relative;
+        width: max-content;
+        aspect-ratio: 1 / 1;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__circle-background {
+        fill: none;
+        stroke-width: 2.2;
+    }
+
+    &__circle-indicator {
+        fill: none;
+        stroke-linecap: round;
+        stroke-width: 2.2;
+        animation: progress 1s ease-out forwards;
+    }
+
+    &__text {
+        direction: ltr;
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}

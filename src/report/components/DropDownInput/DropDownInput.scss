@@ -1,0 +1,31 @@
+.ddInput {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 0.1rem 0.7rem;
+
+    .ddInput--label {
+        font-size: 1.0625rem;
+        color: #5E7393;
+        font-weight: 500;
+        width: 100%;
+        max-width: max-content;
+        text-align: right;
+    }
+
+    .ddInput--val {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+
+        .ddInput--val__txt {
+            font-size: 1rem;
+            color: #3B4C66;
+            font-weight: 500;
+            max-width: 80%;
+            text-align: right;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+$primary-text-color: #ffffff;
+$secondary-text-color: #a9b1bd;
+$primary-background-color: #31363e;
+$secondary-background-color: transparent;
+
+.DashboardFilters {
+  position: absolute;
+  // top: 14rem;
+  width: 18vw;
+  text-align: center;
+  height: fit-content;
+  min-height: 20vh;
+  max-height: 55vh;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px 0 #00000029;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+
+  .DashboardFilters__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    font-size: 1.3rem;
+    height: 2.5rem;
+  }
+  .DashboardFilters__search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    input {
+      width: 80%;
+      padding: 6px 8px;
+      border: 1px solid #e6e4e4;
+      border-radius: 10px;
+    }
+  }
+
+  .DashboardFilters__content {
+    overflow-y: scroll;
+    width: 100%;
+    max-height: calc(55vh - 6.5rem);
+  }
+
+  .DashboardFilters__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 10px 25px;
+  }
+    .DashboardFilters__applyBtn {
+      width: 70%;
+      height: 2.5rem;
+    }
+    .DashboardFilters__category {
+        margin-bottom: 0.5rem;
+        direction: rtl; // Right-to-left text
+        text-align: right;
+    }
+
+    .DashboardFilters__category h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 7px 25px;
+    }
+
+    .DashboardFilters__category .expand-icon {
+        cursor: pointer;
+        margin-right: 0.5rem;
+    }
+
+
+  }
+
+  .DashboardFilters__secondaryBtn {
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    color: $secondary-text-color;
+    cursor: pointer;
+  }
+
+  .DashboardFilters__primaryBtn {
+    border: none;
+    background-color: $primary-background-color;
+    font-weight: 500;
+    color: $primary-text-color;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  hr {
+    border: 1px solid var(--dashboard-filters-border-color);
+  }
+
+
+.DashboardFilters__filtersBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 4rem;
+  right: 20rem;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 10px;
+  color: #687199;
+  border: 1px solid var(--dashboard-filters-border-color);
+  background-color: transparent;
+  font-weight: 500;
+}

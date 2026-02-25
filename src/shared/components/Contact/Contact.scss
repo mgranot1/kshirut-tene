@@ -1,0 +1,23 @@
+.contact-box {
+  width: max-content;
+  max-width: 13vw;
+  color: black;
+  padding: 1rem;
+  z-index: 2;
+
+  &__title {
+    text-decoration: underline;
+    margin-top: 0.5rem;
+  }
+
+  &__text {
+    padding: auto;
+    font-size: 0.9rem;
+  }
+
+  &__link {
+    margin-top: 0.5rem;
+    display: block;
+    color: #797979;
+  }
+}

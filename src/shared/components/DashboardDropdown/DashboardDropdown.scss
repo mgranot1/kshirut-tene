@@ -1,0 +1,135 @@
+.dashboard-dropdown {
+  position: relative;
+  height: inherit;
+
+  .dashboard-dropdown__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.border {
+      font-weight: inherit;
+      color: #31363e;
+      border: 1px solid var(--dashboard-border-color);
+      padding: 2px 12px;
+      border-radius: 10px;
+      height: 2.25rem;
+
+      &.white {
+        background-color: white;
+      }
+
+      &:hover {
+        background-color: var(--dashboard-background-secondary-color);
+        border-color: var(--dashboard-field-text-color);
+      }
+    }
+  }
+
+  &__label {
+    font-size: clamp(10px, 2vw, 1rem);
+    color: 'inherit';
+    cursor: pointer;
+
+    &.underline {
+      text-decoration: underline;
+      font-weight: 400;
+      color: #8f97a4;
+    }
+
+    &.currentExpandMore {
+      font-weight: 500;
+      color: #31363e;
+    }
+
+    &.expandMore {
+      font-weight: 500;
+      color: #767e8a;
+    }
+
+    &.border {
+      font-weight: inherit;
+      min-width: max-content;
+      color: #31363e;
+
+      &.white {
+        background-color: inherit;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.dashboard-dropdown__search {
+  width: 100%;
+  padding: 0 0.5rem !important;
+
+  & .MuiOutlinedInput-root {
+    &.Mui-focused fieldset {
+      border-radius: 0.9rem !important;
+      border: 1px solid #f0f0f0;
+    }
+
+    &:hover fieldset {
+      border-radius: 0.9rem !important;
+      border: 1px solid #f0f0f0;
+    }
+  }
+
+  .MuiInputBase-root {
+    height: 2.5rem;
+    border-radius: 0.9rem !important;
+    border: 1px solid #f0f0f0;
+  }
+}
+
+.dashboard-dropdown__menu--paper {
+  position: absolute;
+  border-radius: 10px !important;
+  border: 1px solid #f0f0f0;
+  width: 17rem;
+  font-size: large;
+}
+
+.dashboard-dropdown__items {
+  max-height: 15rem;
+  overflow-y: auto;
+  text-align-last: center;
+
+  &::-webkit-scrollbar {
+    width: 0.3rem !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f4f6f9;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(181, 180, 180) !important;
+    border-radius: 20px !important;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+  }
+
+  .dashboard-dropdown__item {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+
+    .dashboard-dropdown__checkbox {
+      display: flex;
+
+      .dashboard-dropdown__checkbox-notSelected {
+        color: #687199;
+      }
+
+      .dashboard-dropdown__checkbox-selected {
+        color: #3f5cffb0;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.missingPart {
+  .missingPart__input {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    width: 50%;
+    font-weight: 500;
+    font-size: 1.0625rem;
+    color: #3b4c66;
+    text-overflow: ellipsis;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &::placeholder {
+      color: #c5cfd8;
+      font-size: 1.0625rem;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &.desc {
+      width: 50%;
+      font-size: 0.9375rem;
+      font-weight: 400;
+    }
+
+    &--material {
+      width: 15%;
+    }
+
+    &--dbdec {
+      width: 35%;
+    }
+  }
+
+  border-bottom: 0.125rem #e3e3e3d9 solid;
+
+  .missingPart__error {
+    color: red;
+    position: absolute;
+    font-size: small;
+    bottom: 0;
+  }
+
+  .missingPart__status {
+    color: #0a84ff !important;
+    font-size: 1.0625rem;
+  }
+
+  .missingPart__noStatus {
+    color: #c5cfd8 !important;
+    font-size: 1.0625rem;
+  }
+
+  .missingPart__top {
+    padding: 0.7rem 0 0.7rem 0;
+    height: 3.56rem;
+    z-index: 1;
+    position: relative;
+    border-bottom: 0.0375rem #e3e3e380 solid;
+    display: flex;
+  }
+
+  .missingPart__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0 0.7rem 0;
+    height: 3.56rem;
+    z-index: 1;
+    position: relative;
+
+    .missingPart__sum {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      gap: 1rem;
+    }
+
+    .missingPart__btn {
+      height: 100%;
+      border: 0;
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    .missingPart__icon {
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .missingPart_number {
+      color: #0a84ff;
+      font-weight: 700;
+      font-size: 1.0625rem;
+      min-width: 2rem;
+      max-width: 4rem;
+      height: 2rem;
+      text-align: center;
+      border-radius: 5px;
+      border: none;
+    }
+  }
+}

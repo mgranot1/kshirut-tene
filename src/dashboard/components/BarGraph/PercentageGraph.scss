@@ -1,0 +1,12 @@
+.percentage-graph {
+  width: 72%;
+  background-color: #ebeff4;
+  border-radius: 10px;
+
+  &__short-line {
+    height: 0.4rem;
+    background-color: var(--color);
+    border-radius: 5px;
+    width: calc(var(--percent) * 1%);
+  }
+}

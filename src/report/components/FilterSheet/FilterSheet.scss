@@ -1,0 +1,117 @@
+@media (min-width: 1430px) {
+  .bottom-sheet__modal {
+    .MuiModal-backdrop {
+      width: var(--desktop-width);
+      height: var(--desktop-height);
+      margin-right: calc((100vw - var(--desktop-width)) / 2);
+      margin-top: calc((100vh - var(--desktop-height)) / 2);
+      border-radius: 30px;
+    }
+  }
+}
+
+@media (min-width: 1430px) {
+  .muirtl-1b6orjz-MuiModal-root-MuiDrawer-root.MuiPaper-root,
+  .muirtl-1b6orjz-MuiModal-root-MuiDrawer-root .MuiDrawer-paper {
+    width: var(--desktop-width);
+    max-height: 50vh !important;
+    height: fit-content !important;
+    margin-bottom: 10vh;
+    margin-right: 20vw;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+}
+
+.FilterSheet {
+  z-index: 2;
+  position: relative;
+}
+
+.bottom-sheet {
+  width: 100% !important;
+  display: flex;
+  padding: 1vh 6vw 2vh 6vw;
+  flex-direction: column;
+  overflow-y: auto;
+
+  .filter-list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 40vh;
+    overflow-y: auto;
+  }
+
+  .filter-title {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-right: 6px;
+    margin-top: 6px;
+    color: var(--general-grey-color);
+  }
+
+  .top {
+    .top-filters {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .bottom-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .filter-subtitle {
+      color: var(--secondary-text-color);
+      margin-right: 6px;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .filter-button {
+      color: var(--general-grey-color);
+      width: auto;
+      margin: 5px;
+      width: inherit;
+      border-radius: 7px;
+      font-weight: 500;
+      border-color: #ebebeb;
+      height: 40px;
+    }
+
+    .filter-button.selected {
+      background-color: #ebf3ff;
+      color: #3d99fd;
+      border: none;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    height: 40px;
+
+    .start-filteres-button {
+      box-shadow: none;
+      background-color: #0a84ff;
+      font-weight: 700;
+      font-size: 1.125rem;
+      width: inherit;
+    }
+
+    .clear-button {
+      background-color: #f9fafb;
+      color: var(--general-grey-color);
+      font-weight: 500;
+      min-width: 5rem;
+      border-radius: 7px;
+      font-size: 1rem;
+      height: 3.125rem;
+    }
+  }
+}

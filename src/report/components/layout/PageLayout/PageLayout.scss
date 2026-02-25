@@ -1,0 +1,67 @@
+.PageLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 0;
+
+  @media (min-width: 1430px) {
+    background-color: white;
+    width: var(--desktop-width);
+    height: var(--desktop-height);
+    border-radius: 1.875rem;
+    box-shadow: 0.125rem 0.125rem 1rem 0 #0b1a371a;
+    box-shadow: -0.125rem -0.125rem 1rem 0 #0b1a371a;
+    z-index: 1;
+  }
+
+  .PageLayout__grid {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    overflow-y: auto;
+
+    &[has-footer="true"] {
+      height: calc(100vh - var(--header-height) - var(--footer-height));
+    }
+
+    &[has-footer="false"] {
+      height: calc(100vh - var(--header-height));
+    }
+
+    .PageLayout__children {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      @media (min-width: 1430px) {
+        width: 80%;
+      }
+    }
+  }
+}
+
+.credit {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding-right: 1rem; 
+  color: #aaaec5;
+  user-select: none;
+}
+
+.credit-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.logo {
+  height: 2rem;
+  width: auto;
+}

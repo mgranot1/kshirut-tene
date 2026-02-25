@@ -1,0 +1,11 @@
+.screen-catalog {
+    &__cards {
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        flex: 1 1 auto;
+        overflow-y: auto;
+    }
+}

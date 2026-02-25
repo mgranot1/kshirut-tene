@@ -1,0 +1,53 @@
+.Folder {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.37rem;
+    user-select: none;
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: white;
+        border: none;
+        gap: 0.5rem;
+        padding-right: 0.8rem;
+
+        &--icon {
+            transform: scale(0.4);
+            transition: transform 0.25s;
+            transform-origin: 50% 50%;
+
+            &.close {
+                transform: scale(0.4) rotate(180deg);
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.37rem;
+
+    }
+    
+}
+
+
+
+  
+  .closedFolder {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+
+  
+  .openFolder {
+    max-height: var(--drawer-height);
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+  }

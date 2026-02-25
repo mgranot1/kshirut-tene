@@ -1,0 +1,30 @@
+.pieWithExpectedSkeleton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .pieWithExpectedSkeleton > div {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  &__pie {
+    width: 50%;
+  }
+
+  &__development {
+    width: 50%;
+    .pieWithExpectedSkeleton__units {
+      display: flex;
+      flex-direction: row;
+      gap: 2.6rem;
+    }
+  }
+}

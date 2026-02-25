@@ -1,0 +1,14 @@
+.top-view-path {
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+
+  &__icon {
+    color: #aaabad;
+  }
+
+  .clickable {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

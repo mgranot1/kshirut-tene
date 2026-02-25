@@ -1,0 +1,91 @@
+.orgLevelSelect__container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+  width: 100%;
+  position: relative;
+
+  @media (min-width: 1430px) {
+    background-color: white;
+    width: var(--desktop-width);
+    height: var(--desktop-height);
+    min-height: 400px;
+    border-radius: 1.875rem;
+    box-shadow: 0.125rem 0.125rem 1rem 0 #0b1a371a;
+    box-shadow: -0.125rem -0.125rem 1rem 0 #0b1a371a;
+
+    &::before {
+      content: url("@assets/report/leftCow.svg");
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 3;
+      width: 20vw;
+    }
+
+    &::after {
+      content: url("@assets/report/rightCow.svg");
+      position: fixed;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .orgLevelSelect__img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .orgLevelSelect__header {
+    padding-top: 18vh;
+    margin-bottom: 2rem;
+
+    .orgLevelSelect__title {
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2.93rem;
+    }
+
+    .orgLevelSelect__subTitle {
+      margin-top: 0.5rem;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 1.84rem;
+    }
+  }
+
+  .orgLevelSelect__content {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9fafb;
+    padding: 0 1.25rem;
+    width: 100%;
+    border-radius: 0.625rem;
+    position: relative;
+
+    & > *:not(:last-child) {
+      border-bottom: 0.6px #e3e3e380 solid;
+    }
+
+    @media (min-width: 1430px) {
+      width: 80%;
+    }
+
+    .orgLevelSelect__ddinput {
+      height: 3rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .orgLevelSelect__button {
+    width: 100%;
+
+    @media (min-width: 1430px) {
+      width: 80%;
+    }
+  }
+}

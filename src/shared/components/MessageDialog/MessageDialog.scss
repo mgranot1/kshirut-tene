@@ -1,0 +1,81 @@
+.messageDialog {
+  display: flex;
+  min-width: 20rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem !important;
+  padding: 1rem;
+  border-radius: 35px !important;
+
+  &__title {
+    font-size: 8 !important;
+
+    &--icon svg {
+      font-size: 8rem;
+    }
+  }
+
+  & &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0rem 0 0rem 0;
+    padding: 2rem 3rem 0 3rem;
+
+    &--msg {
+      font-size: 1.5rem !important;
+      color: #1c215d !important;
+      font-weight: 700 !important;
+      font-family: "Heebo" !important;
+      text-align: center;
+      margin-bottom: 1rem !important;
+    }
+
+    &--desc {
+      font-size: 1.25rem !important;
+      font-family: "Heebo" !important;
+      text-align: center;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    &--btn {
+      min-width: max-content;
+      width: 60vw;
+      height: 3.625rem;
+      border-radius: 0.9375rem !important;
+      font-size: 1.1rem !important;
+      padding: 0.5rem 1rem !important;
+      font-family: "Heebo" !important;
+
+      &.MuiButton-contained {
+        background-color: #0a84ff !important;
+      }
+    }
+  }
+}
+
+.close-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+
+  & svg {
+    font-size: 2.5rem;
+  }
+}
+
+.close {
+  color: rgb(59, 185, 59);
+}
+
+.cancel {
+  color: rgba(182, 0, 0, 0.815);
+}

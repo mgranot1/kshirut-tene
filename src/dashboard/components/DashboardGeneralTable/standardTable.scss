@@ -1,0 +1,83 @@
+.medium {
+  width: 4rem;
+}
+.large {
+  width: 5rem;
+}
+.extra-large {
+  width: 11rem;
+}
+
+.table-tags {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.tags-container {
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.table-tag {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+  font-size: 1em;
+  &.icon::before {
+    content: "";
+    width: 10px;
+    height: 15px;
+    float: left;
+    display: block;
+    margin-left: 0.3rem;
+  }
+  &.time-icon::before {
+    background: url("@assets/dashboard/clock.svg") no-repeat;
+  }
+  &.stop-icon::before {
+    background: url("@assets/dashboard/stop.svg") no-repeat;
+  }
+  &.green::before {
+    background-color: #2ada2a;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px 0px rgba(42, 218, 42, 0.5);
+  }
+  &.red::before {
+    background-color: red;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px 0px rgba(255, 0, 0, 0.5);
+  }
+  &.grey::before {
+    background-color: hsl(240, 5%, 62%);
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    box-shadow: 2px -1px 1px 1px rgba(22, 25, 40, 0.15) inset;
+  }
+}
+.table-tag::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(239, 245, 244, 0.575);
+  border: 2px solid var(--dashboard-filters-border-color);
+  border-radius: 7px;
+  padding-top: 0.1rem;
+  padding-left: 1rem;
+}
+
+abbr {
+  text-decoration: hsl(195, 26%, 64%) underline;
+  letter-spacing: 0.05em;
+}

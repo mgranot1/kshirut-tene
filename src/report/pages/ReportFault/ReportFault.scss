@@ -1,0 +1,205 @@
+.reportFault {
+  height: 100%;
+
+  .reportFault__messageTitle {
+    color: var(--general-grey-color);
+    display: flex;
+    font-weight: 500;
+    width: 20rem;
+    // background-color: #C5CFD8;
+  }
+
+  .desc {
+    display: block;
+    white-space: nowrap;
+    // display: inline-block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .reportFault__messageContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 0.2rem;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    border: 1px solid var(--general-border-color);
+    height: 11.5rem;
+    justify-content: space-between;
+
+    .reportFault__date {
+      color: #5e7393;
+      font-size: 0.875rem;
+      font-weight: 700;
+      font-family: "Heebo";
+      background-color: #ebebeb99;
+      border-radius: 0.75rem;
+      padding: 0.1rem 0.625rem;
+      width: fit-content;
+      display: inline-block;
+      align-self: center;
+    }
+
+    .reportFault__lastMessageContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        width: 0.3rem !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #f4f6f9;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: rgb(181, 180, 180) !important;
+        border-radius: 20px !important;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555 !important;
+      }
+
+      .reportFault__lastMessage {
+        padding: 0 0.7rem;
+        display: inline-block;
+        min-width: auto;
+        max-width: 100%;
+        background-color: var(--secondary-button-color);
+        color: white;
+        font-weight: 300;
+        border-radius: 4rem 4rem 0 4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .reportFault__commenter {
+        font-size: 0.75rem;
+        color: #939fb1;
+        font-family: "Heebo";
+        font-weight: 700;
+      }
+
+      &.right {
+        align-items: flex-start;
+      }
+
+      &.left {
+        align-items: flex-end;
+      }
+    }
+
+    .reportFault__subTitle {
+      font-size: 0.8rem;
+    }
+
+    .reportFault__inputTitle {
+      display: flex;
+      align-self: flex-start;
+      font-size: 0.8rem;
+    }
+
+    .reportFault__messageInput {
+      resize: none;
+      width: 100%;
+      padding: 0.2rem;
+      border: 1px solid #3c3c4329;
+      border-radius: 0.3rem;
+      margin-bottom: 0.4rem;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  .reportFault__form {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+
+    .reportFault__extrasButtonContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 3.5rem;
+      border-radius: 1rem;
+      padding: 0 1.25rem;
+      background-color: var(--secondary-bg-container-color);
+      cursor: pointer;
+
+      .reportFault__extrasTitle {
+        font-size: 1.0625rem;
+        color: #5e7393;
+        font-weight: 500;
+      }
+
+      .reportFault__extrasButton {
+        display: flex;
+        align-items: center;
+
+        .reportFault__extrasButtonText {
+          color: #c5cfd8;
+          display: flex;
+        }
+
+        .reportFault__error {
+          color: red;
+        }
+      }
+    }
+
+    .reportFault__formLabel {
+      align-self: flex-start;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      color: var(--form-title-color);
+    }
+  }
+}
+
+.reportFault__footerContainer {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .reportFault__chatButton {
+    height: 3.125rem;
+    background-color: white;
+    border: 1px solid var(--secondary-button-color);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @media (min-width: 1430px) {
+      width: 10rem;
+    }
+
+    .reportFault__chatIcon {
+      height: 2rem;
+      width: 3rem;
+    }
+  }
+}

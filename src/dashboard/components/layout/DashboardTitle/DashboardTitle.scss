@@ -1,0 +1,17 @@
+.dashboard-title {
+    display: flex;
+    text-align: right;
+    font-weight: 400;
+    font-size: clamp(30px, 7vw, 2.375rem);
+    color: #373A48;
+    align-items: center;
+    gap: 0.8rem;
+
+    .dashboard-title__kshirut {
+        font-size: 1rem;
+        color: #646B76;
+        background-color: #fdfdfd;
+        border-radius: 5px;
+        padding: 0.1rem 0.4rem;
+    }
+}

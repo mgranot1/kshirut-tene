@@ -1,0 +1,55 @@
+.kshirutDevelopement {
+  max-height: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 0.8rem;
+
+  .kshirutDevelopement__title {
+    text-align: start;
+    font-weight: 500;
+  }
+
+  .kshirutDevelopement__subTitle {
+    text-align: start;
+    font-size: small;
+  }
+
+  .kshirutDevelopement__graph {
+    display: flex;
+    justify-content: space-between;
+    gap: 15%;
+    min-height: 55%;
+    width: 100%;
+  }
+
+  .kshirutDevelopement__line {
+    background-color: #dee1ea;
+    min-height: 0.2rem;
+    margin-bottom: 3rem;
+  }
+  .kshirutDevelopement__displayModeBtn {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.536);
+    cursor: pointer;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 0px;
+    color: rgba(0, 0, 0, 0.536);
+
+    .kshirutDevelopement__iconContainer {
+      width: auto;
+      height: auto;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.kshirutDevelopement_TitlesContainer {
+  justify-content: space-between;
+  display: flex;
+  font-display: row;
+  align-items: start;
+}

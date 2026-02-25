@@ -1,0 +1,22 @@
+.entryHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 2rem;
+
+    .entryHeader__back {
+        .entryHeader__btn {
+            border: none;
+            background-color: transparent;
+            position: absolute;
+            right: 0.5rem;
+
+            .entryHeader__icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 0;
+            }
+        }
+    }
+}

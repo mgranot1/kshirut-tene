@@ -1,0 +1,62 @@
+.graph-container {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+
+  & > div {
+    // margin: 0rem 0rem 0rem 0rem
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 0.2rem;
+    margin-left: 0.2rem;
+  }
+
+  .dynamicChart-container {
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    // margin: 1rem;
+
+    .dynamicChart-header {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & > .dynamicChart-header-title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        text-align: right;
+      }
+    }
+  }
+  .kshirutDevelopement-container {
+    width: 50%;
+    // margin: 1rem;
+    // border-right: 0.1rem solid #7d808997;
+  }
+
+  .dynamicChart-input {
+    border: none;
+    height: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.menuItem {
+  display: flex;
+  width: 100%;
+
+  .menuItem-icon {
+    transform: scale(0.8);
+    margin-left: 0.5rem;
+  }
+}

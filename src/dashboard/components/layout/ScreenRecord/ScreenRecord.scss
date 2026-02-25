@@ -1,0 +1,31 @@
+.ScreenRecord {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    height: 2.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: none;
+
+    .ScreenRecord__square {
+        margin-right: 0.625rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 5px;
+    }
+
+    .ScreenRecord__text {
+        text-align: right;
+    }
+
+    &:hover {
+        background-color: #F6F7F899;
+    }
+
+    &.clicked {
+        background-color: #F6F7F8;
+        color: #17191F;
+    }
+}

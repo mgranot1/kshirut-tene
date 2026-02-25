@@ -1,0 +1,58 @@
+$sidebar-width: 15vw;
+$header-height: 8%;
+
+.DashboardLayout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  background-color: #ffffff;
+  min-height: 0;
+
+  .DashboardSidebar {
+    width: $sidebar-width;
+    height: 100%;
+    border-left: #ececf4 5px solid;
+    min-width: 0;
+  }
+
+  .DashboardMiddle {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .DashboardHeader {
+      min-height: 0;
+      height: $header-height;
+      border-bottom: #ececf4 5px solid;
+      box-shadow: 0px 6px 7px 0 #5b5b5b0d;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .DashboardContent-section {
+      height: calc(100% - $header-height);
+      background-color: #eff1f6;
+    }
+
+    .DashboardContent {
+      padding: 0rem 2.5rem;
+      border: #ececf4 1px solid;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      background-color: #eff1f6;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .DashboardLayout > .DashboardMiddle > .DashboardContent {
+    padding: 2.4rem 0 0 0;
+  }
+}

@@ -1,0 +1,54 @@
+.SummaryFault {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  .SummaryFault__card {
+    width: 100%;
+    display: flex;
+    background-color: #f9fafb;
+    justify-content: space-between;
+    height: 4.0625rem;
+    padding: 0.8rem;
+    border-radius: 0.625rem;
+  }
+
+  .SummaryFault__right {
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .SummaryFault__error {
+      color: red;
+      min-width: 1.5rem;
+      display: flex;
+      margin-left: 0.1rem;
+    }
+  }
+
+  .SummaryFault__left {
+    display: flex;
+    align-items: center;
+  }
+
+  .SummaryFault__leftArrow {
+    color: #c5cfd8;
+    font-size: 1.26rem;
+  }
+
+  .SummaryFault__words {
+    font-weight: 500;
+    font-size: 1.0625rem;
+  }
+
+  .SummaryFault__status {
+    color: var(--general-blue-color);
+
+    &[is-grayed-field="grayed"] {
+      color: #c5cfd8;
+    }
+  }
+}

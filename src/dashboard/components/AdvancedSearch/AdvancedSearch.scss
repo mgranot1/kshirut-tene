@@ -1,0 +1,167 @@
+﻿@use "sass:color";
+
+$primary-color: #363947;
+$border-color: #d4d9df;
+$text-color: #3b4c66;
+$bg-color: #f1f3f4;
+$shadow-color: rgba(60, 64, 67, 0.3);
+$background-color: #ececf4;
+
+.advanced-search {
+  width: 40rem;
+  position: relative;
+
+  .advanced-search__search-bar {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    background-color: $background-color; // Often light gray when inactive, white active. Keeping white for simplicity.
+    border: 1px solid transparent;
+    border-radius: 28px;
+    padding: 8px 16px;
+    transition:
+      box-shadow 0.2s,
+      background-color 0.2s;
+
+    &:focus-within {
+      background: white;
+      box-shadow:
+        0 1px 2px 0 rgba(60, 64, 67, 0.3),
+        0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    }
+
+    .advanced-search__search-bar--icon {
+      padding: 0.1rem;
+    }
+
+    .advanced-search__search-bar--main-search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      color: $text-color;
+      padding: 0.3rem 0.2rem;
+      outline: none;
+
+      &::placeholder {
+        color: #5f6368;
+      }
+    }
+
+    .advanced-search__search-bar--filter-toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      color: #5f6368;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.15s;
+
+      &:hover,
+      &.active {
+        background-color: rgba(27, 27, 83, 0.08); // Slight grey hover
+        color: $text-color;
+      }
+    }
+  }
+
+  .advanced-search__popup {
+    position: absolute;
+    top: 100%;
+    right: 0; // Align right or let it span
+    width: 100%;
+    margin-top: 8px;
+    background: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow:
+      0 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12); // "Elevation" shadow
+    padding: 24px;
+    z-index: 1000;
+    box-sizing: border-box;
+
+    .advanced-search__popup--form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .advanced-search__popup--form-group {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      gap: 0.2rem;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #5f6368;
+      }
+
+      input[type="text"] {
+        padding: 10px 12px;
+        transition: border-color 0.2s;
+        border-radius: 10px;
+        height: 2.25rem;
+        border: 1px solid $border-color;
+        min-width: 18rem;
+        font-size: 1rem;
+        color: $text-color;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .advanced-search__popup--actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .advanced-search__popup--btn {
+      padding: 8px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.2s;
+    }
+
+    .search-btn {
+      background-color: $primary-color;
+      color: white;
+      width: 10.81rem;
+      height: 2.18rem;
+
+      &:hover {
+        background-color: color.adjust($primary-color, $lightness: -10%);
+        box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
+      }
+    }
+
+    .reset-btn {
+      background-color: transparent;
+      color: #5f6368;
+      height: 2.18rem;
+
+      &:hover {
+        background-color: rgba(95, 99, 104, 0.04);
+        color: $text-color;
+      }
+    }
+  }
+}

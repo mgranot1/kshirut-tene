@@ -1,0 +1,56 @@
+.comments {
+    font-family: "Heebo";
+
+    .comments__date {
+        color: #5E7393;
+        font-size: 0.875rem;
+        font-weight: 700;
+        font-family: "Heebo";
+        background-color: #EBEBEB99;
+        border-radius: 0.75rem;
+        padding: 0.1rem 0.625rem;
+        margin: 1rem;
+        width: fit-content;
+        display: inline-block;
+        align-self: center;
+    }
+
+    .comments__container.right-bubble {
+        .comments__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .comments__name {
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    .comments__container.left-bubble {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 0.5rem;
+
+        .comments__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .comments__name {
+                font-size: 0.75rem;
+                color: #939FB1;
+                font-family: "Heebo";
+                font-weight: 700;
+                padding-top: 1rem;
+            }
+
+            .comments__avatar {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+}

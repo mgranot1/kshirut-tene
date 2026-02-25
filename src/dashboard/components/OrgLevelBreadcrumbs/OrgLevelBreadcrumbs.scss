@@ -1,0 +1,34 @@
+.orgLevelBreadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+
+  .orgLevelBreadcrumbs__button {
+    border-radius: 10px;
+    min-width: 8rem;
+    height: 2.25rem;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 1px solid #3f5dff;
+    color: #3f5dff;
+    background-color: #3f5dff0d;
+
+    &--cancel {
+      color: #8e9098;
+      font-weight: 500;
+      font-size: 1rem;
+      border-radius: 10px;
+    }
+  }
+
+  &__skeleton {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+
+    span {
+      margin: 0 8px;
+    }
+  }
+}

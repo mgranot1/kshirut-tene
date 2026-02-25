@@ -1,0 +1,76 @@
+.FilterOptions {
+
+    .FilterOptions__searchLine {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 2rem;
+        margin: 1.1rem 0;
+        color: #d0d0db;
+        .FilterOptions__searchLineIcon {
+            position: absolute;
+            right: 2.8rem;
+            // z-index: 5;
+        }
+        .FilterOptions__searchLineField {
+            padding-right: 2rem;
+            width: 65%;
+            margin-right: 2.5rem;
+        }
+    }    
+    .FilterOptions__field {
+        height: 2rem;
+        padding: 0 0.4rem;
+        border-radius: 10px;
+        border: 1px solid var(--dashboard-filters-border-color);
+        
+    }
+
+    .FilterOptions__field:hover,
+    .FilterOptions__field:focus,
+    .FilterOptions__field:focus-visible {
+        outline: none;
+    }
+
+    .FilterOptions__textField {
+        width: 80%;
+        margin: 1rem 1rem 1.1rem 0rem;
+        }
+    
+    .FilterOptions__line {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 25px;
+        background-color: #f9fafb60;
+        height: 2.15rem;
+        gap: 0.7rem;
+        
+        .FilterOptions__checkbox {
+            height: 1.5rem;
+            
+            .FilterOptions__checkbox-notSelected {
+                color: #687199;
+            }
+
+            .FilterOptions__checkbox-selected {
+                color: #3f5cffb0;
+            }
+
+        }
+        
+        .FilterOptions__optionText {
+            max-width: 15rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;   
+        }
+        
+        .FilterOptions__optionText-bold {
+            font-weight: bold;
+        }
+    }
+    .FilterOptions__line:hover {
+        background-color: #f0f3f5;
+    }
+}   

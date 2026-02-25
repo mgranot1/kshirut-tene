@@ -1,0 +1,103 @@
+.developementGraph {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  .developementGraph__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .title {
+      text-align: start;
+      font-weight: 500;
+      width: fit-content;
+    }
+    .subTitle {
+      text-align: start;
+      font-size: small;
+      width: fit-content;
+    }
+
+    .developementGraph__buttonContainer {
+      padding: 0.4rem 0.4rem 0rem 0.4rem;
+      background-color: white;
+      color: rgba(0, 0, 0, 0.536);
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.536);
+
+      .developementGraph__displayModeBtn {
+        background-color: white;
+        color: rgba(0, 0, 0, 0.536);
+
+        .developementGraph__icon {
+          padding: 0.2rem;
+        }
+      }
+    }
+  }
+
+  .developementGraph__graph {
+    display: flex;
+    justify-content: space-between;
+    gap: 15%;
+    min-height: 55%;
+    width: 100%;
+
+    .graph__unit {
+      margin-top: 2rem;
+      width: 100%;
+      max-height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      position: relative;
+
+      .graph__longLine {
+        background-color: #ebeff4;
+        width: 100%;
+        min-height: 5rem;
+        display: flex;
+        flex-direction: column-reverse;
+        border-radius: 2.5%;
+        cursor: pointer;
+
+        .graph__shortLine {
+          background-color: var(--barColor);
+          height: calc(var(--percent) * 1%);
+          z-index: 10;
+          border-radius: 2.5%;
+          display: flex;
+          align-items: end;
+          justify-content: center;
+          position: relative;
+
+          .graph__percentText {
+            color: black;
+            font-weight: 600;
+            font-size: clamp(0.5rem, 1vw, 1vw);
+            position: absolute;
+            top: calc(-1 * var(--invert-percentage) * 1.5 / 100);
+          }
+        }
+      }
+
+      .graph__labelText {
+        font-size: small;
+        top: 5.2rem;
+        position: absolute;
+        color: #7d8089;
+
+        .graph__amountText {
+          font-size: small;
+          font-weight: 500;
+          color: black;
+        }
+      }
+    }
+  }
+  .line {
+    background-color: #dee1ea;
+    min-height: 0.2rem;
+    margin-bottom: 3rem;
+  }
+}

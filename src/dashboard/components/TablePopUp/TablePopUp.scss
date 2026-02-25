@@ -1,0 +1,64 @@
+.dialog-title-card-container {
+  background-color: white;
+  width: 15rem;
+  border-radius: 5px;
+}
+
+.dialog-title-container {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.table-button {
+  &.MuiButtonBase-root {
+    border-radius: 10px;
+    min-width: 7.5vw;
+    height: 2.25rem;
+    font-weight: 500;
+    color: var(--general-black-color);
+    border: 1px solid var(--dashboard-border-color);
+    font-size: 1rem;
+    letter-spacing: 0.01rem;
+    background-color: white;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    font-weight: inherit;
+
+    span,
+    svg {
+      font-weight: inherit;
+      margin: 0 0.2em;
+      color: var(--dashboard-field-text-color);
+    }
+  }
+
+  &.update {
+    color: #3f5dff;
+    border-color: #3f5dff;
+    background-color: #3f5dff0d;
+  }
+}
+
+.save-report-button {
+  &.MuiButtonBase-root {
+    background-color: #363947;
+    border-color: #363947;
+    color: var(--primary-bg-color);
+    margin-left: 0;
+
+    &.Mui-disabled {
+      background-color: var(--disabled-bg-color);
+      border-color: var(--disabled-bg-color-secondary);
+      color: var(--disabled-text-color);
+    }
+
+    &:hover {
+      background-color: rgb(36, 36, 37);
+    }
+  }
+}

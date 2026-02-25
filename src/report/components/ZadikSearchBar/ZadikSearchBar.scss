@@ -1,0 +1,39 @@
+.ZadikSearchBar {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  &--icon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .ZadikSearchBar__filter-button {
+    margin-right: 6px;
+    border: none;
+    background: none;
+    height: 3.125rem;
+
+    & > img {
+      color: var(--general-grey-color);
+      z-index: 2;
+      height: 3.125rem;
+    }
+
+    &--on {
+      margin-right: 6px;
+      border: none;
+      background: none;
+
+      & > img {
+        color: blue;
+        z-index: 2;
+        filter: saturate(4.5);
+        border: 0.6px solid #025bd7;
+        border-radius: 10px;
+      }
+    }
+  }
+}

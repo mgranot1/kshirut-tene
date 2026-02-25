@@ -1,0 +1,18 @@
+.ConcatPopover {
+    position: absolute;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 10px;
+    border: #ebebed solid 2px;
+    background-color: white;
+}
+
+.popover-top {
+    bottom: 0;
+    right: 5%;
+}
+
+.popover-right {
+    left: 70%;
+    top: 20%;
+}

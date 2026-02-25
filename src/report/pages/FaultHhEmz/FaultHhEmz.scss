@@ -1,0 +1,64 @@
+.faultHhEmz {
+    display: flex;
+    flex-direction: column;
+    // align-items: end;
+    align-items: start;
+
+    .faultHhEmz__input {
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        border: 0;
+        width: 50%;
+        font-size: 1.0625rem;
+        // color: var(--general-grey-color);
+        color: #3B4C66;
+        text-overflow: ellipsis;
+
+        &::placeholder {
+            color: #C5CFD8;
+        }
+
+        &:focus-visible {
+            outline: none
+        }
+    }
+
+    .faultHhEmz__card {
+        background-color: #F9FAFB;
+        border-radius: 0.625rem;
+        width: 100%;
+        padding: 0 1.25rem 0 1.25rem;
+    }
+
+    .faultHhEmz__title {
+        margin-top: 1.2rem;
+        color: #939FB1;
+        font-weight: 500;
+        font-size: 0.937F5rem;
+    }
+
+    .faultHhEmz__addBtn {
+        background-color: rgba(255, 255, 255, 0);
+        border: 0;
+        width: 100%;
+    }
+}
+
+.mustField {
+    position: relative;
+    border: red solid 0.1rem !important;
+    border-radius: 0.625rem;
+}
+
+.addUnit {
+    height: 2.3125rem;
+    margin-top: 1.25rem;
+    display: flex;
+    cursor: pointer;
+
+    .addUnit__txt {
+        color: var(--general-blue-color);
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}

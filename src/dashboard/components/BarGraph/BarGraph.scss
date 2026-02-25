@@ -1,0 +1,57 @@
+.bar-graph {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  // padding-top: 3rem;
+  max-width: 8rem;
+  width: -webkit-fill-available;
+  min-width: 4.3rem;
+
+  &__longLine {
+    height: 7rem;
+    // background-color: #3eb866;
+    background-color: var(--bar-disable-color);
+    border-radius: 0.1rem;
+    max-width: 1.5rem;
+    width: inherit;
+
+    align-items: flex-end;
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+
+  &__shortLine {
+    height: calc(var(--percent) * 1%);
+    border-radius: 0.1rem;
+    width: inherit;
+    background-color: var(--barColor);
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &--percent {
+      font-weight: 500;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+    &--amount {
+        font-weight: 500;
+        margin-bottom: 4px;
+        font-size: 0.8rem;
+    }
+  }
+}
+.labelsContainer {
+  flex-direction: column;
+  justify-content: center;
+  min-height: 7.5rem;
+}

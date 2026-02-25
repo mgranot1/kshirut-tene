@@ -1,0 +1,28 @@
+.multiStepDialog {
+    overflow: inherit !important;
+}
+
+.back-button {
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 6px 8px;
+    background-color: transparent;
+    font-weight: 500;
+    color: #a9b1bd;
+}
+
+.next-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 2.5rem;
+    font-weight: 500;
+    width: 12rem;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 0.4rem;
+}

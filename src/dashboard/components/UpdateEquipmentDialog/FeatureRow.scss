@@ -1,0 +1,53 @@
+.feature-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 3.2rem;
+  padding-top: 1rem;
+
+  .feature-row__input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .feature-row__select {
+      border-radius: 0 7px 7px 0;
+      height: 2.25rem;
+      width: 10rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .feature-row__value {
+      border-right: none;
+      width: 14rem;
+      // width: 100%;
+
+      .MuiInputBase-root.MuiOutlinedInput-root {
+        border-radius: 7px 0 0 7px;
+        font-weight: bold;
+        font-size: 0.875rem;
+        padding: 0;
+        border-right: none;
+        height: 2.25rem;
+        padding-left: 0.4rem;
+      }
+
+      &.rounded {
+        .MuiInputBase-root.MuiOutlinedInput-root {
+          border-radius: 7px;
+        }
+      }
+    }
+  }
+
+  .feature-row__icon {
+    transform: scale(0.6);
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(0.64);
+    }
+  }
+}

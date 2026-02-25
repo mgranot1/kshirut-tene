@@ -1,0 +1,86 @@
+.faultList {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: var(--general-grey-color);
+
+    .faultList__card {
+        width: 100%;
+        height: 8.25rem;
+        border-radius: 1.25rem;
+        border: 1.5px solid #DEDEDE80;
+        box-shadow: 4px 4px 8px 0 #0000000D;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .faultList__content {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+
+
+            .faultList__cardTitle {
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+
+            .faultList__cardSubtitle {
+                font-size: 1rem;
+                font-weight: 400;
+            }
+
+            .faultList__cardData {
+                padding-top: 0.5rem;
+                display: flex;
+                gap: 10px;
+                font-size: 0.8rem;
+                font-weight: 400;
+                width: 100%;
+                justify-content: center;
+                font-size: 0.875rem;
+
+                .faultList__qual {
+                    display: flex;
+                    background-color: var(--bar-disable-color);
+                    border-radius: 0.625rem;
+                    padding: 0.1875rem 1.2rem;
+                    top: 1rem;
+                    gap: 10px;
+                    align-items: center;
+                    height: 1.8125rem;
+
+                    .faultList__dot.qualified {
+                        height: 0.625rem;
+                        width: 0.625rem;
+                        border-radius: 50%;
+                        background-color: #00DF16 !important;
+                        box-shadow: 0px 0px 5px 1px #00DF166B;
+                    }
+
+                    .faultList__dot.not-qualified {
+                        height: 0.625rem;
+                        width: 0.625rem;
+                        border-radius: 50%;
+                        background-color: #FF3B30 !important;
+                        box-shadow: 0px 0px 5px 1px #FF3B306B;
+                    }
+
+                    .faultList__dot {
+                        height: 0.625rem;
+                        width: 0.625rem;
+                        border-radius: 50%;
+                        background-color: #b1b9c5 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .faultList__faults {
+        width: 100%;
+    }
+}

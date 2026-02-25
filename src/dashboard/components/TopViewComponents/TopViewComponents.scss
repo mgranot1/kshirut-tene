@@ -1,0 +1,91 @@
+.title-value-card {
+  transition:
+    transform 0.1s ease-out,
+    box-shadow 0.1s ease-out,
+    background-color 0.1s ease-out;
+
+  &.small > article {
+    justify-content: space-between;
+  }
+
+  & > article {
+    height: 100%;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    padding: clamp(0px, 1vw, 1rem);
+    // padding: 1rem;
+    position: relative;
+    align-items: flex-start;
+
+    & > div:first-child {
+      color: black;
+      margin-bottom: auto;
+      display: block;
+      text-align: right;
+
+      & > .title-value-card-value {
+        font-size: clamp(20px, 1.5vw, 2rem);
+      }
+    }
+
+    & > div:not(:first-child) {
+      color: var(--dashboard-field-text-color);
+
+      & > .MuiTypography-root {
+        font-size: clamp(10px, 1.5vw, 0.9rem);
+      }
+    }
+  }
+
+  & .title-value-card-entry {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title-value-card-value {
+    &.MuiTypography-root {
+      font-size: clamp(20px, 1.5vw, 2rem);
+    }
+  }
+
+  .title-value-card-subtitle {
+    &.MuiTypography-root {
+      font-size: clamp(10px, 0.8vw, 2rem);
+    }
+  }
+
+  .title-value-card-subvalue {
+    &.MuiTypography-root {
+      font-size: clamp(15px, 0.85vw, 2rem);
+    }
+  }
+
+  .title-value-card-title {
+    &.MuiTypography-root {
+      font-size: clamp(12px, 1.5vw, 1rem);
+    }
+  }
+
+  &.active {
+    cursor: pointer;
+  }
+
+  &.active:hover {
+    background-color: rgb(250, 250, 252);
+    box-shadow:
+      5px 5px 35px -6px rgba(61, 122, 156, 0.2),
+      -5px -5px 43px -10px rgba(250, 83, 166, 0.1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title-value-card {
+    & > article {
+      padding: 0;
+    }
+  }
+}

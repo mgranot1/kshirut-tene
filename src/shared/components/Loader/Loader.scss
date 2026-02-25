@@ -1,0 +1,11 @@
+.loader {
+  z-index: var(--loader-zindex);
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+}

@@ -1,0 +1,148 @@
+.MuiAccordionDetails-root {
+  padding: 0px;
+}
+
+.ZadikRowCard__card {
+  display: flex;
+  border: var(--primary-bg-color) solid 0.05rem;
+  
+  position: relative;
+  border-radius: 20px;
+  max-height: 25vh;
+  padding: 2vh;
+  margin: 1rem 0;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 12px 0px #0000001f;
+  cursor: pointer;
+
+    &::after {
+        position: absolute;
+        inset: -2px;                 
+        border: 2px solid var(--secondary-button-color);
+        border-radius: inherit;
+        pointer-events: none;
+        content: " ";
+        display: none;
+    }
+
+  &:hover {
+    &::after {
+      display: block;
+    }
+  }
+
+  &:active {
+    box-shadow: 0px 4px 12px 0px #0000001f,
+    0px 0px 12px 0px #00000087 inset;
+    &::after {
+      display: block;
+      border-width: 4px;
+    }
+  }
+
+  .ZadikRowCard__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-around;
+    width: 100%;
+    gap: 0.5vh;
+    color: var(--general-grey-color);
+
+    .ZadikRowCard__last-update {
+      color: rgba(0, 0, 0, 0.337254902);
+      left: 5vw;
+      top: 2vh;
+      position: absolute;
+      font-size: small;
+    }
+    .ZadikRowCard__zadik {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-right: 2rem;
+    }
+
+    .ZadikRowCard__desc {
+      font-size: 0.9rem;
+      font-weight: 400;
+      max-width: 50vh;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right: 2rem;
+    }
+
+    .ZadikRowCard__qualifition {
+      display: flex;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      width: 100%;
+      justify-content: center;
+      font-size: 0.875rem;
+
+      .ZadikRowCard__qual {
+        display: flex;
+        background-color: var(--bar-disable-color);
+        border-radius: 0.625rem;
+        padding-top: 0.2rem;
+        padding-right: 1rem;
+        padding-bottom: 0.2rem;
+        padding-left: 1rem;
+        gap: 10px;
+        align-items: center;
+        height: 1.8125rem;
+
+        .qualified {
+          height: 0.625rem;
+          width: 0.625rem;
+          border-radius: 50%;
+          background-color: #00df16 !important;
+          box-shadow: 0px 0px 5px 1px #00df166b;
+        }
+
+        .not-qualified {
+          height: 0.625rem;
+          width: 0.625rem;
+          border-radius: 50%;
+          background-color: #ff3b30 !important;
+          box-shadow: 0px 0px 5px 1px #ff3b306b;
+        }
+
+        .ZadikRowCard__qual-dot {
+          background-color: #b1b9c5;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          // z-index: 1;
+        }
+      }
+    }
+  }
+
+  .ZadikRowCard__faults {
+    color: #00000056;
+    height: 2rem;
+    border-top: 1px #0000001f inset;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 550;
+
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    .ZadikRowCard__arrow {
+      align-items: center;
+    }
+  }
+}

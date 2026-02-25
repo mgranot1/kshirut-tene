@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9" height="10" fill="none">
+    <g stroke="#3D3F6D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#xcross_svg__a)">
+        <path d="m8.234 1.468-7.2 7.2M1.034 1.468l7.2 7.2"></path>
+    </g>
+    <defs>
+        <clipPath id="xcross_svg__a">
+            <path fill="#fff" d="M0 .5h9v9H0z"></path>
+        </clipPath>
+    </defs>
+</svg>

@@ -1,0 +1,109 @@
+$fields-padding: 1.25rem;
+
+.form {
+  border-radius: 0.625rem;
+  width: 100%;
+  background-color: var(--secondary-bg-container-color);
+
+  & > *:not(:last-child) {
+    border-bottom: 0.6px #e3e3e380 solid;
+  }
+
+  &--label {
+    align-self: flex-start;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    color: var(--form-title-color);
+  }
+
+  &--field {
+    // background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+
+    .ddInput,
+    .toggle,
+    .select {
+      height: inherit;
+      padding: 0 $fields-padding;
+    }
+
+    &__label {
+      font-size: 1.0625rem;
+      color: #5e7393;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    &__value {
+      display: inline-flex;
+      font-size: 1rem;
+      color: #3b4c66;
+      font-weight: 500;
+    }
+  }
+
+  .textField {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.0625rem;
+    color: #5e7393;
+    font-weight: 500;
+    text-align: right;
+    height: inherit;
+    align-items: center;
+    padding: 0 $fields-padding;
+
+    .textField__input {
+      border: none;
+      // flex: end;
+      background-color: #ffffff00;
+      justify-self: flex-start;
+      text-align: left;
+      font-size: 1rem;
+      color: #3b4c66;
+      font-weight: 500;
+      width: inherit !important;
+      height: inherit !important;
+      max-width: 35vw !important;
+    }
+
+    .textField__input:focus {
+      outline: none;
+      // justify-self: flex-start;
+      // text-align: left;
+      // width: 2rem;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: transparent;
+  }
+
+  .form--field {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .pointer-disabled {
+    cursor: default;
+  }
+
+  .form__errorMessage {
+    display: flex;
+    position: absolute;
+    bottom: -0.1rem;
+    right: $fields-padding;
+    font-size: 0.7rem;
+    color: red;
+  }
+}

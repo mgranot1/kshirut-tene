@@ -1,0 +1,33 @@
+.action-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-end;
+
+    & &__button {
+        cursor: pointer;
+        width: 10.81rem;
+        height: 2.18rem;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 0.875rem !important;
+    }
+}
+
+.edit {
+    background-color: #363947 !important;
+}
+
+.delete {
+    background-color: #f03f42 !important;
+}
+
+.add {
+    background-color: #2f94fa
+}

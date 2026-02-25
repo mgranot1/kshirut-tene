@@ -1,0 +1,14 @@
+.longLine {
+  height: 0.75rem;
+  background-color: var(--bar-disable-color);
+  border-radius: 0.652rem;
+  width: 100%;
+}
+
+.shortLine {
+  height: 0.75rem;
+  background-color: var(--color);
+  border-radius: 0.652rem;
+  transition: width 0.4s ease-in-out;
+  width: calc(var(--percent) * 1%);
+}

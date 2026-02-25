@@ -1,0 +1,18 @@
+.customScreenGrid {
+  overflow-y: auto;
+  // padding: 0.5rem;
+
+  .customScreenGrid__grid {
+    position: relative;
+    width: 100%;
+
+    .customScreenGrid__component {
+      position: absolute;
+    }
+
+    .customScreenGrid__dragComponent {
+      border: #e3e5e9 0.13rem dashed;
+      border-radius: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.messageBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+    &__input {
+        width: 80%;
+        max-width: 1000px;
+        max-height: 4.5rem;
+        border: 1px solid #C5C5C7;
+        border-radius: 10px;
+        background-color: white;
+        padding: 10px 12px;
+        font-size: medium;
+        resize: none;
+        outline: none;
+        overflow-y: auto !important;
+
+        &::-webkit-scrollbar {
+            width: 0.3rem !important;
+        }
+
+        &::-webkit-scrollbar-track {
+            margin-block: 0.35rem;
+            border-radius: 2rem;
+            transform: translateX(2rem);
+        }
+
+        &::before {
+            border-radius: 8px;
+        }
+
+        &::after {
+            border-radius: 20px;
+        }
+    }
+
+    .messageBar__enter {
+        // padding-left: 0;
+        color: #3478F6;
+    }
+
+    .MuiInputBase-root.MuiOutlinedInput-root {
+        height: 36px !important;
+        width: 350px;
+        border: 1px solid #C5C5C7;
+        border-radius: 80px;
+        background-color: white;
+        padding: 10px 12px;
+
+
+        // min-height: 36px !important;
+        // max-height: 130px;
+        // overflow-y: auto;
+    }
+}

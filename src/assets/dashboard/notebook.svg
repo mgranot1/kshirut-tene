@@ -1,0 +1,23 @@
+<svg width="100%" height="100%" viewBox="-1 0 75 60"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
+    <defs>
+        <clipPath id="clip0">
+            <rect x="4477" y="1147" width="60" height="68"/>
+        </clipPath>
+        <clipPath id="clip1">
+            <rect x="-2381.07" y="-0.279991" width="145257" height="164307"/>
+        </clipPath>
+        <image width="60" height="68" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABECAMAAADqU6bsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFWUExURQAAAICAv4CAqmBgn3FxjnR0om1tkmBwj2lplmt5oW1tnmh0l2p1lWJsk2x2nWpynmZvmWVymmlvlmdzmGVxmml0m2lzlmdxmGZvmWpymmZzmWh0m2hvl2hvmmhzmmlwmmlwmWhymmdxmGlymmdxmGlwmWhxmmdwmGlymWlxmWhwmmpym2dxmGhymWdwmGlymWhxmWdwmGhxmWlxmWlxmWdxmGdxmmhwl2hymWdxmWlwmGlwmmhxmWhwl2lxmmhwmWhyl2ZwmWZymWdvmWhxmWlwmmlymmZxmWhymGhwmmZvmWhxmWhvmGZwmWlxmWdxmGhvmmdxmGhwmmdxmGhxmmhwl2dwmGhxmWdxmGhxmGdvmGdymWdxmGhxmWdwmGdxmGdxmWdxmGdwmWZwmWhwmWdvmWdwmWhxl2hwmGdxmWdxmWdxmWdwmWdxmWhxmGhxmGhxmWhxmTXr7asAAABxdFJOUwAEBggJCw4QERMVFhgaGh0eJicqKy4zNDc6PEBHR0dJS0xNTk9QUVRVWlteY2dtcHFyc3V6fn6AiYqLjZOWl5ibnZ2eoKGhoqSmp6qusbKztbm6vb/Aw8vNzc7T1NXZ3d3e4uXl5+nq6+7x8/b4+v7+jftHTwAAAAlwSFlzAAA7DgAAOw4BzLahgwAAAqVJREFUWEftl1lTE0EUhYctIKIsimzKIgQI+6asAVRUFlmVTRQQZRFk6f//Yve5J0mTTCftg6Vl+T2kzj33npqqnp7OTPAXURGtprpFdbSCKguDSqnX1BZvtD1I7aRCDyk1wCrJAOxc145iap5VknnYUVYuujG1fDeNZdjdHAohElvYv8CQk4v9hViE4zYlExzIyUQJI0l6z9ny4LyXITJG35MxxsAMTW9mGNQM09L8wO/lSRqXsKUJhhkN6mmo2ZZIJ8QSO0mWYHdGWmYhNPXsrEn5sUbrRshZaaSQTKNWNbuQak0abVJtFpqi9MToLjQsuox7Umpk4QejlWpDYw76tBxF0Hqgbp6LtHl2ow5aRZafIjCH4gy6H9pQmUdxi7xKiiDoR+DMyDrIq3z4XuRfIVKnZQfUV/H9+IZIh1Z9UFNi+zGFSJ9Wo1CjYvuRiqSHG0dGQxkxd1lwhsdRhjLOEWe4EpWDxN1yhdtROWjn0G+5crZjIXkEOMPBY9dqP+FAtrAH/1646mEoVWxrnOG2Q9QhHMrBo3GF5QwLR84wjSssp6eDxHPlCteiclDLIVc4WEcZyjpH3OGC+M6nUHbiBRxxh334H7bCBfHdzynep71+CM5w+n0eom/jCmfssC9s2LjCGXv7Oxs2rnDGU/WWDRtX2LwZ2Ly7Q98mFRmCmhQbPEiReIJvM4mIWcoY1KLYfiwiEtOqAepYbD+OEWnQqugaMvEn5oH8GV4XGb0CvQ3fi20EVqB7odU0Cg+mZZ4bd0+ql1Ll4oVM77GU9VbqoKeYjpPinsQ2MGsNXtFQamd1KQurfGnVvGJUs0nLm00GDWUbND3ZKGNQ+KUPBesjQWjaYicnW02M2DRPH7GdhaN4M8czuPeopTMLT2vuc/DPEgQ/AdydzrT2LA2XAAAAAElFTkSuQmCC" preserveAspectRatio="none" id="img2"></image>
+        <clipPath id="clip3">
+            <rect x="0" y="0" width="142876" height="161926"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#clip0)" transform="translate(-4477 -1147)">
+        <g clip-path="url(#clip1)" transform="matrix(0.000419944 0 0 0.000419944 4477 1147)">
+            <g clip-path="url(#clip3)" transform="matrix(1 0 0 1 0.947266 0.202791)">
+                <use width="100%" height="100%" xlink:href="#img2" transform="scale(2381.26 2381.26)"></use>
+            </g>
+        </g>
+    </g>
+</svg>

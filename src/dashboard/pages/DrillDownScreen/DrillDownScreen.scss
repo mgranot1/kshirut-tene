@@ -1,0 +1,68 @@
+$border-width: 5px;
+$card-width: var(--card-width);
+
+.DrillDownScreen {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 400;
+    font-size: clamp(30px, 7vw, 2.375rem);
+    color: #373a48;
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  &__separationLine {
+    height: 0.2rem;
+    background-color: #dee1ea;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__components {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__component {
+    width: $card-width;
+    height: 18.75rem;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .DrillDownScreen__back {
+    display: flex;
+    align-items: center;
+    font-weight: inherit;
+    margin: 0.5rem 0;
+
+    &.MuiButtonBase-root {
+      border-radius: 10px;
+      min-width: 7.5vw;
+      width: 3rem;
+      height: 2.25rem;
+      font-weight: 500;
+      color: var(--general-black-color);
+      border: 1px solid var(--dashboard-border-color);
+      margin-left: 0.8vw;
+      font-size: 1rem;
+      letter-spacing: 0.01rem;
+    }
+
+    span,
+    svg {
+      font-weight: inherit;
+      margin: 0 0.2em;
+      color: var(--dashboard-field-text-color);
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

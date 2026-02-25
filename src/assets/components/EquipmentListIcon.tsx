@@ -1,0 +1,47 @@
+export const EquipmentListIcon = () => {
+	return (
+		<div style={{ transform: 'scale(0.35)', width: '3rem' }}>
+			<svg
+				width="60"
+				height="56"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlnsXlink="http://www.w3.org/1999/xlink"
+				overflow="hidden"
+			>
+				<defs>
+					<clipPath id="clip03">
+						<rect x="1476" y="867" width="60" height="56" />
+					</clipPath>
+					<clipPath id="clip13">
+						<rect x="-0.301889" y="-0.154972" width="145257" height="135732" />
+					</clipPath>
+					<image
+						width="60"
+						height="56"
+						xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA4CAMAAACWs2tWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGbUExURQAAAAD//5mZmYCAqpKSkouLopKSpJaWpZKeqpCbpomTp5OTp46OoY2Vp5GZqoyUpZSUpZCWo5OZpo6ZpI2Yo4yWpZGWpY6Yoo6Yp5CapI6XpZCZopCZp42WpJKbqI+YppGVo46WppKapo+Xo4+XopGYpJCYo46VpI+Wo4+Zo5KYpo+Wo5CVpI6Xoo6XpY+XpZCYpY6WpI+XpY+XpI+Wo4+ZpY+XpZCXpY+WpI6XpJCXpI+Vo5CYpY6Wo5CWpY+XpY+Xo46WpI+Xo5CXpY+YpI6XpJCXpI+Wo4+YpY+YpI+XpY+WpI+Uo4+Yo46Xoo+XoY+XpY6YpY+XpI+WpY+XpI6YpI2XpJCXo4+VpI6VpJCVpI2YpY6Xoo+YpJCWpI6XpJCYoo6Wo42Xo4+Xoo+XpI+Wo46XpI+VpY+Xo4+XpI6Xo4+WpI6Xo42Xo46XpI6VopCVoo6XpI+XpI6WpI6WpI+XpI+XpI+Wo4+WpI6Xo46Vo4+XpI6Xo4+Xo46YpI+Wo46XpI+WpI6Xo46WpI+Xo46WpI+XpI6Wo4+XpNeur70AAACIdFJOUwABBQYHCw4RFRcaGhsdHh8fJygtLzMzNDQ1Njc3ODg5Oj8/QEJDRUZLS01QV1hYXV5fYGJkZmlucHNzdHd6en+AgYKFhoeHi4uPkJKZmZqbm5yfoaKjpqeprq6vs7S3vL7AwcLCxMXLzM3O0NHT1tfX2Nve3+Lj5Obn6Onq7u/w8fLz9/n6/f7y262hAAAACXBIWXMAADsOAAA7DgHMtqGDAAACeUlEQVRIS+2V+0NLYRzGX1Euc0uMUYhckjLkboVQoTEswxRbdHOJQu7Kpe+f3fv9vs/evefsrO38pB98fth5nuf7farzbmep5UJdxFKHqDqae6fmyGFuqrcZo0psfoSOh4ebMF6Sznms+5jvxMISZLAbQAYrZbmKxUCuYakMLVjrP1ePo9bUn+9H3IK1YCZlZ7gB1tIwLINJ2ED6ZGUAzsOAjPrggpjhhelaOA+10zybgQtgF8+pDc5Hmwxb5RRWIXM5xeOPMCV8kLbh5f1tSC2XOM/ClJCVmuUK4gJyKG9gSngnnSJPVmJgkHLgWTPmvB2ercZECFmm0Q0YMVWU03LaO+6x1re4BTNNFeXCtIcN0fvt8KHKKsGO6Nt++FBldYYt0e8D8KHK6iR7otd4x8KV1VEOiG4ZF7KsWv9wRGvFhC2rQxzRYdGhy2qIs26R4ctO9r/sZ3mXb4sMoEL5LMsXIgOoUD7I8odIZg2uwC3X1Jirk61jSe2iLw59ptlsQrTBLsaSY0TjyZibab6yfqXF3uesNLmomWgKi10y0Oif7JYvSJhUW/+KEGwbiylJhZS6wxeU1VsJM6NyMeQxQrldQtAxwa+nsXBMMi/X5as6EkmzSX+RDPyS150oq7timZ/Hd8cXoP0MNjYNQhJ9WoGuUjcQ0U1t4tA+JnhR/mLGvDuGy8g2an0E2sPIyAne+w6bYmPZ90DCuJZV/OYu1i5POV2I7yl/z02N5p4f8yfFC/4PgcJpC+s9p+2cVZE8hkwOGehALLhnZYliyBQ/nwbPJyyQaA7zvL/r3FTJWVkS2VnfU2WJJceJxuSpKo/veXYpPM//GqUWAUPLTNuZZeqnAAAAAElFTkSuQmCC"
+						preserveAspectRatio="none"
+						id="img23"
+					></image>
+					<clipPath id="clip33">
+						<rect x="0" y="0" width="142876" height="133351" />
+					</clipPath>
+				</defs>
+				<g clip-path="url(#clip03)" transform="translate(-1476 -867)">
+					<g
+						clip-path="url(#clip13)"
+						transform="matrix(0.000419944 0 0 0.000419944 1476 867)"
+					>
+						<g clip-path="url(#clip33)" transform="matrix(1 0 0 1 -0.0140054 0.135575)">
+							<use
+								width="100%"
+								height="100%"
+								xlinkHref="#img2"
+								transform="scale(2381.27 2381.27)"
+							></use>
+						</g>
+					</g>
+				</g>
+			</svg>
+		</div>
+	);
+};

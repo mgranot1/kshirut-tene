@@ -1,0 +1,15 @@
+
+.shared-icon {
+    cursor: pointer;
+    display: flex;
+    
+    &__star {
+        color: #ffd700;
+    }
+}
+
+.large-icon {
+    svg {
+         font-size: 2.3rem;
+    }
+}
