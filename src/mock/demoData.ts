@@ -654,7 +654,7 @@ export const demoComponentData = {
     toWarningThreshold: 0,
     componentData: {
       htmlContent:
-        '<span style="font-weight:bold;color:#374768;font-size:18px;">שימו לב</span> — <span style="color:#d32f2f;">יש לעדכן כשירות עד סוף הי555555fffffffffffffffffffffffffffffffffffffffffffff55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555ום</span>',
+        '<span style="font-weight:bold;color:#374768;font-size:18px;">שימו לב</span> — <span style="color:#d32f2f;">יש לעדכן כשירות עד סוף הי555555fffffffffמיכל ויעל עדכון גיטffffffffffffffffffffffffffffffffffff55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555ום</span>',
       defaultFontSize: 16,
       defaultAlign: "right" as const,
     },
