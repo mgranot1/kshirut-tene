@@ -579,6 +579,20 @@ export const demoScreenComponents = [
     screenId: "SCR01",
     type: ComponentType.FreeText as string,
   },
+  {
+    id: "CMP04",
+    compColumn: 3,
+    compRow: 0,
+    screenId: "SCR02",
+    type: ComponentType.FreeText as string,
+  },
+  {
+    id: "CMP05",
+    compColumn: 1,
+    compRow: 0,
+    screenId: "SCR02",
+    type: ComponentType.PieWithExpected as string,
+  },
 ];
 
 export const demoComponentSettings: Record<string, any> = {

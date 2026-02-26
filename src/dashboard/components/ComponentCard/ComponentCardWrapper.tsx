@@ -15,6 +15,7 @@ interface IComponentCardWrapperProps<T extends ComponentType> {
   onDelete?: (id: IComponent["id"]) => void;
   onEdit?: (id: IComponent["id"]) => void;
   onDrilldown?: (id: IComponent["id"], by: Drilltype) => void;
+  isImporting?: boolean;
 }
 
 const ComponentCardWrapper = <T extends ComponentType>({
@@ -23,6 +24,7 @@ const ComponentCardWrapper = <T extends ComponentType>({
   onView,
   onDelete,
   onEdit,
+  isImporting,
 }: IComponentCardWrapperProps<T>) => {
   const kshirutType = useRecoilValue(kshirutTypeState);
   const { data: componentData, isFetching } = useGetComponentData(
@@ -57,6 +59,7 @@ const ComponentCardWrapper = <T extends ComponentType>({
         onDelete={onDelete}
         onEdit={onEdit}
         onDrilldown={handleDrilldown}
+        isImporting={isImporting}
       />
     );
   }

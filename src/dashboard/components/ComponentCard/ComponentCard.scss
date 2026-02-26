@@ -114,4 +114,48 @@
       pointer-events: none;
     }
   }
+
+  &.importing {
+    border: solid #3b82f6 0.1rem;
+    position: relative;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+    overflow: visible !important;
+
+    .card__import-badge {
+      position: absolute;
+      top: -12px;
+      right: 12px;
+      background-color: #3b82f6;
+      color: white;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      z-index: 20;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+
+      animation: dancing 1.2s infinite ease-in-out;
+
+      &::before {
+        content: '#';
+        margin-left: 4px;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@keyframes dancing {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }

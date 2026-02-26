@@ -31,6 +31,7 @@ interface IComponentCardProps<T extends ComponentType> {
   onDelete?: (id: IComponent["id"]) => void;
   onEdit?: (id: IComponent["id"]) => void;
   onDrilldown?: (componentIndex: IComponent["id"], by: Drilltype) => void;
+  isImporting?: boolean;
 }
 
 const ComponentCard = <T extends ComponentType>({
@@ -44,6 +45,7 @@ const ComponentCard = <T extends ComponentType>({
   onEdit,
   onView,
   onDrilldown,
+  isImporting,
 }: IComponentCardProps<T>) => {
   const screenMode = useRecoilValue<ScreenMode>(screenModeState);
   const [selectedComponents, setSelectedComponents] = useRecoilState(selectedComponentsState);
@@ -61,9 +63,14 @@ const ComponentCard = <T extends ComponentType>({
   return (
     <div
       className={`card ${screenMode === ScreenMode.Select ? "select-mode" : ""} ${isSelected ? "selected" : ""
-        }`}
+        } ${isImporting ? "importing" : ""}`}
       onClick={handleToggleSelect}
     >
+      {isImporting && (
+        <div className="card__import-badge">
+          <span>נוסף כעת</span>
+        </div>
+      )}
       <div className="card__header">
         <div className="card__title">
           <Tooltip title={name} children={<p>{name}</p>}></Tooltip>

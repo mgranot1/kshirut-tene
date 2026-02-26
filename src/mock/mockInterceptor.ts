@@ -255,6 +255,13 @@ function routeRequest(
     return mockResponse({ components: [], total: 0 }, config);
   }
   if (url === "component/components") {
+    const screenId = getParam(config, "screenId");
+    if (screenId) {
+      const filtered = Object.values(demoScreenComponents).filter(
+        (c) => c.screenId === screenId,
+      );
+      return mockResponse(filtered, config);
+    }
     return mockResponse(demoScreenComponents, config);
   }
   if (url === "component/data") {

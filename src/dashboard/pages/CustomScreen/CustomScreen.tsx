@@ -1,5 +1,5 @@
 import EditIcon from "@assets/dashboard/edit.svg";
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { useCurrentPath } from "../../../shared/hooks/useCurrentPath";
@@ -21,8 +21,13 @@ import {
 } from "../../stores/componentSettingMode.store";
 import { screenActionsState } from "../../stores/screenActions.store";
 import { ScreenMode, screenModeState } from "../../stores/screenMode.store";
-import { ComponentType, IComponent } from "../../types/component.types";
+import { ComponentType } from "../../types/component.types";
+import type {
+  IBaseComponent,
+  IComponent,
+} from "../../types/component.types";
 import { IScreen, ScreenAction } from "../../types/screen.types";
+import { getNewComponentLocation } from "../../utils/component.utils";
 import "./CustomScreen.scss";
 
 export const CardWidth = {
@@ -35,6 +40,14 @@ export enum Drilltype {
   ByOrgLevel = "01",
   ByFamily = "02",
 }
+
+const boxToBaseComponent = (box: Box): IBaseComponent => ({
+  id: box.id,
+  compColumn: box.x,
+  compRow: box.y,
+  type: ComponentType.Pie, // Default for import mock
+  screenId: "", // Not used in location calculation
+});
 
 const CustomScreen = () => {
   const currentScreenId = useCurrentPath();
@@ -53,18 +66,8 @@ const CustomScreen = () => {
     useSetRecoilState<TScreenActions>(screenActionsState);
   const location = useLocation();
   const { mutate: mutateToggle } = useToggleShare();
-
-  const { currentScreenName, isCurrentScreenShared } = useMemo(() => {
-    const currentScreen: IScreen | undefined = (screens ?? []).find(
-      (screen) => screen.id === currentScreenId
-    );
-    return {
-      currentScreenName:
-        currentScreen?.name ?? location.state?.screenName ?? "אינו זמין לצפיה",
-      isCurrentScreenShared:
-        currentScreen?.isShared ?? location.state?.isShared ?? false,
-    };
-  }, [currentScreenId, screens]);
+  const processedImports = useRef<string[]>([]);
+  const lastScreenId = useRef<string>(currentScreenId);
 
   const handleDeleteComponent = (id: IComponent["id"]) => {
     setCurrentComponents((prev) => prev.filter((i) => i.id !== id));
@@ -88,32 +91,107 @@ const CustomScreen = () => {
   };
 
   useEffect(() => {
-    setCurrentComponents(
-      (components ?? [])?.map((component) => {
+    if (!components) return;
+
+    if (lastScreenId.current !== currentScreenId) {
+      processedImports.current = [];
+      lastScreenId.current = currentScreenId;
+    }
+
+    const baseBoxes: Box[] = (components ?? [])?.map((component) => {
+      const componentCard = (
+        <ComponentCardWrapper
+          id={component.id}
+          type={component.type}
+          onDelete={handleDeleteComponent}
+          onEdit={() => {
+            handleComponentAction(component.id, ComponentSettingMode.Edit);
+          }}
+          onView={() =>
+            handleComponentAction(component.id, ComponentSettingMode.View)
+          }
+        />
+      );
+
+      return {
+        x: component.compColumn,
+        y: component.compRow,
+        id: component.id,
+        width: CardWidth[component.type],
+        children: componentCard,
+      } as Box;
+    });
+
+    let finalBoxes = [...baseBoxes];
+    const importedIds = location.state?.importedComponents;
+
+    if (importedIds?.length > 0 && processedImports.current !== importedIds) {
+      const newImportBoxes: Box[] = [];
+
+      importedIds.forEach((id: string) => {
+        const type = ComponentType.Pie;
+        const currentBaseComponents = [...finalBoxes, ...newImportBoxes].map(boxToBaseComponent);
+        const pos = getNewComponentLocation(currentBaseComponents, type);
+
         const componentCard = (
           <ComponentCardWrapper
-            id={component.id}
-            type={component.type}
+            id={id}
+            type={type}
             onDelete={handleDeleteComponent}
             onEdit={() => {
-              handleComponentAction(component.id, ComponentSettingMode.Edit);
+              handleComponentAction(id, ComponentSettingMode.Edit);
             }}
             onView={() =>
-              handleComponentAction(component.id, ComponentSettingMode.View)
+              handleComponentAction(id, ComponentSettingMode.View)
             }
+            isImporting={true}
           />
         );
 
-        return {
-          x: component.compColumn,
-          y: component.compRow,
-          id: component.id,
-          width: CardWidth[component.type],
+        newImportBoxes.push({
+          x: pos.compColumn,
+          y: pos.compRow,
+          id: `import-${id}-${currentScreenId}`,
+          width: CardWidth[type],
           children: componentCard,
-        } as Box;
-      })
+        } as Box);
+      });
+
+      finalBoxes = [...finalBoxes, ...newImportBoxes];
+      processedImports.current = importedIds;
+
+      // Clear the importing state after 5 seconds
+      setTimeout(() => {
+        setCurrentComponents(prev =>
+          prev.map(box => {
+            if (box.id.startsWith("import-")) {
+              // Re-clone children to remove isImporting prop
+              const child = box.children as React.ReactElement;
+              return {
+                ...box,
+                children: React.cloneElement(child, { isImporting: false })
+              };
+            }
+            return box;
+          })
+        );
+      }, 5000);
+    }
+
+    setCurrentComponents(finalBoxes);
+  }, [currentScreenId, components, location.state]);
+
+  const { currentScreenName, isCurrentScreenShared } = useMemo(() => {
+    const currentScreen: IScreen | undefined = (screens ?? []).find(
+      (screen) => screen.id === currentScreenId
     );
-  }, [currentScreenId, components]);
+    return {
+      currentScreenName:
+        currentScreen?.name ?? location.state?.screenName ?? "אינו זמין לצפיה",
+      isCurrentScreenShared:
+        currentScreen?.isShared ?? location.state?.isShared ?? false,
+    };
+  }, [currentScreenId, screens, location.state]);
 
   return (
     <>
