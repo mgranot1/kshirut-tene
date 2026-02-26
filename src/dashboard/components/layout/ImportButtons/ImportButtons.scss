@@ -1,0 +1,104 @@
+.import-buttons {
+    display: flex;
+    align-items: center;
+
+    &__trigger {
+        height: 2.75rem;
+        border-radius: 0.5rem !important;
+        border: 1px solid #374768 !important;
+        color: #374768 !important;
+        background: white !important;
+        padding: 0 1.25rem !important;
+        font-weight: 600 !important;
+        text-transform: none !important;
+        font-size: 0.95rem !important;
+        gap: 0.5rem;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        transition: all 0.2s ease !important;
+
+        &:hover {
+            background: rgba(55, 71, 104, 0.04) !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .MuiButton-startIcon {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+            transition: transform 0.2s ease;
+        }
+    }
+}
+
+.import-menu {
+    &__paper {
+        margin-top: 0.5rem;
+        border-radius: 0.75rem !important;
+        min-width: 280px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+        border: 1px solid #edf2f7;
+        overflow: hidden;
+    }
+
+    &__item {
+        display: flex !important;
+        align-items: stretch !important;
+        padding: 1rem !important;
+        gap: 1rem;
+        border-bottom: 1px solid #f7fafc;
+        transition: background 0.2s ease !important;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: #f8fafc !important;
+
+            .import-menu__icon-wrapper {
+                color: #374768;
+                background-color: #ebf1ff;
+            }
+        }
+    }
+
+    &__icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 0.5rem;
+        background-color: #f1f5f9;
+        color: #718096;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+
+        svg {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+        text-align: right;
+    }
+
+    &__title {
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        color: #2d3748 !important;
+    }
+
+    &__description {
+        font-size: 0.75rem !important;
+        color: #718096 !important;
+        line-height: 1.4 !important;
+        white-space: normal;
+    }
+}

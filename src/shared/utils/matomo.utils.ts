@@ -1,8 +1,8 @@
 import { IUserUnit } from "../../report/types/userUnit.types";
 
 // Stub matomo-client functions for local/demo mode
-const bootstrap = (..._args: any[]) => ({ click: () => {}, all: () => {} });
-const event = (..._args: any[]) => {};
+const bootstrap = (..._args: any[]) => ({ click: () => { }, all: () => { } });
+const event = (..._args: any[]) => { };
 
 const MATOMO_ADDRESS = import.meta.env.VITE_MATOMO_ADDRESS;
 const MATOMO_ID = import.meta.env.VITE_MATOMO_ID;
@@ -40,6 +40,11 @@ export const setUserDetails = (user: IUserUnit) => {
 };
 
 export const initMatomo = (user: IUserUnit) => {
+  if (!MATOMO_ADDRESS || !MATOMO_ID) {
+    console.warn("Matomo address or ID is missing. Skipping initialization.");
+    return;
+  }
+
   isMatomoInit = true;
 
   _paq.push(["enableLinkTracking"]);

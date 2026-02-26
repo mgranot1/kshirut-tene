@@ -1,4 +1,4 @@
-import { PropsWithChildren, Suspense } from "react";
+import { Suspense, type PropsWithChildren } from "react";
 import { useLocation } from "react-router-dom";
 import { useUserUnit } from "../../../../report/hooks/useUserUnit";
 import { SitePaths } from "../../../../router/routes";
@@ -8,6 +8,7 @@ import useGetScreens from "../../../services/screen/useGetScreens";
 import { AdvancedScreenSearch } from "../../AdvancedScreenSearch/AdvancedScreenSearch";
 import OrgLevelBreadcrumbs from "../../OrgLevelBreadcrumbs/OrgLevelBreadcrumbs";
 import ActionButtons from "../ActionButtons/ActionButtons";
+import ImportButtons from "../ImportButtons/ImportButtons";
 import "./DashboardHeader.scss";
 
 const DashboardHeader: React.FC<PropsWithChildren> = () => {
@@ -34,11 +35,13 @@ const DashboardHeader: React.FC<PropsWithChildren> = () => {
       return <AdvancedScreenSearch />;
     }
 
-    // Allow editing only on my screens
-    if (path.includes(SitePaths.CUSTOM_SCREEN) && isCurrentScreenBelongToMe)
+    if (path.includes(SitePaths.CUSTOM_SCREEN))
       return (
         <Suspense fallback={<span></span>}>
-          <ActionButtons />
+          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+            {isCurrentScreenBelongToMe && <ActionButtons />}
+            <ImportButtons />
+          </div>
         </Suspense>
       );
 

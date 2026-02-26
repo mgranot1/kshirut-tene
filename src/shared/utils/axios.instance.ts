@@ -24,13 +24,13 @@ const MAX_RETRY_ATTEMPTS = 3;
 const getParams = () => {
   const params = {};
 
-  if (baseURL.includes("dev")) {
+  if (baseURL?.includes("dev")) {
     params["sap-client"] = 120;
     params["saml2"] = "disabled";
     params["sap-language"] = "he";
   }
 
-  if (baseURL.includes("qas")) {
+  if (baseURL?.includes("qas")) {
     params["saml2"] = "disabled";
     params["sap-language"] = "he";
   }
