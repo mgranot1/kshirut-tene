@@ -136,49 +136,6 @@
     position: relative;
   }
 
-  .fte-color-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 100;
-    background: #fff;
-    border: 1px solid #dadce0;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    padding: 8px;
-    margin-top: 4px;
-  }
-
-  .fte-color-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .fte-color-row {
-    display: flex;
-    gap: 2px;
-  }
-
-  .fte-color-cell {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 0;
-    transition: transform 0.1s;
-
-    &:hover {
-      transform: scale(1.2);
-      z-index: 1;
-    }
-
-    &.active {
-      outline: 2px solid #1a73e8;
-      outline-offset: 1px;
-    }
-  }
-
   .fte-fontsize-dropdown {
     position: absolute;
     top: 100%;

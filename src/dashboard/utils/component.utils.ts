@@ -1,5 +1,5 @@
 import { IOption } from "../../shared/types/general.types";
-import { defaultComponentSettingForm } from "../components/ComponentSetting/ComponentSetting";
+import { DEFAULT_COMPONENT_SETTING_FORM } from "../components/ComponentSetting/ComponentSetting.constants";
 import { UNITS_PER_ROW } from "../components/CustomScreenGrid/CustomScreenGrid";
 import { CardWidth } from "../pages/CustomScreen/CustomScreen";
 import {
@@ -114,7 +114,7 @@ export const adaptResponseToComponentSetting = (
   componentResponse: TComponentHeader | undefined,
 ): TComponentSetting => {
   let componentSetting: TComponentSetting = JSON.parse(
-    JSON.stringify(defaultComponentSettingForm),
+    JSON.stringify(DEFAULT_COMPONENT_SETTING_FORM),
   );
 
   if (!componentResponse?.id) return componentSetting;
