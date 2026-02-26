@@ -87,4 +87,31 @@
     justify-content: center;
     overflow: hidden;
   }
+
+  &.select-mode {
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #3b82f6;
+      background-color: #f8fafc;
+    }
+  }
+
+  &.selected {
+    border: solid #3b82f6 0.1rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border: 1px solid #3b82f6;
+      border-radius: 0.4rem;
+      pointer-events: none;
+    }
+  }
 }

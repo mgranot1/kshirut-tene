@@ -3,13 +3,17 @@ import FamilyIcon from "@assets/dashboard/fam-icon.svg";
 import InfoIcon from "@assets/dashboard/info-icon.svg";
 import OrgLevelIcon from "@assets/dashboard/org-icon.svg";
 import TrashIcon from "@assets/dashboard/trash.svg";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Tooltip } from "@mui/material";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { useCustomScreenActions } from "../../hooks/useCustomScreenActions";
 import { Drilltype } from "../../pages/CustomScreen/CustomScreen";
 import { ScreenMode, screenModeState } from "../../stores/screenMode.store";
+import { selectedComponentsState } from "../../stores/selectedComponents.store";
 import {
   ComponentType,
+} from "../../types/component.types";
+import type {
   GraphDataMap,
   IComponent,
 } from "../../types/component.types";
@@ -42,10 +46,24 @@ const ComponentCard = <T extends ComponentType>({
   onDrilldown,
 }: IComponentCardProps<T>) => {
   const screenMode = useRecoilValue<ScreenMode>(screenModeState);
+  const [selectedComponents, setSelectedComponents] = useRecoilState(selectedComponentsState);
   const { handleSubmitScreenActions } = useCustomScreenActions();
 
+  const isSelected = selectedComponents.includes(id);
+
+  const handleToggleSelect = () => {
+    if (screenMode !== ScreenMode.Select) return;
+    setSelectedComponents((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
   return (
-    <div className="card">
+    <div
+      className={`card ${screenMode === ScreenMode.Select ? "select-mode" : ""} ${isSelected ? "selected" : ""
+        }`}
+      onClick={handleToggleSelect}
+    >
       <div className="card__header">
         <div className="card__title">
           <Tooltip title={name} children={<p>{name}</p>}></Tooltip>
@@ -54,7 +72,8 @@ const ComponentCard = <T extends ComponentType>({
           <div className="card__buttons">
             <img
               className="card__icon edit-icon"
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 onEdit?.(id);
                 handleSubmitScreenActions();
               }}
@@ -62,9 +81,18 @@ const ComponentCard = <T extends ComponentType>({
             />
             <img
               className="card__icon delete-icon"
-              onClick={() => onDelete?.(id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete?.(id);
+              }}
               src={TrashIcon}
             />
+          </div>
+        ) : screenMode === ScreenMode.Select ? (
+          <div className="card__buttons">
+            {isSelected && (
+              <CheckCircleIcon sx={{ color: "#3b82f6", fontSize: "1.5rem" }} />
+            )}
           </div>
         ) : (
           <div className="card__buttons">
@@ -74,7 +102,10 @@ const ComponentCard = <T extends ComponentType>({
                 children={
                   <img
                     className="card__icon"
-                    onClick={() => onDrilldown(id, Drilltype.ByOrgLevel)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDrilldown(id, Drilltype.ByOrgLevel);
+                    }}
                     src={OrgLevelIcon}
                   />
                 }
@@ -86,7 +117,10 @@ const ComponentCard = <T extends ComponentType>({
                 children={
                   <img
                     className="card__icon"
-                    onClick={() => onDrilldown(id, Drilltype.ByFamily)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDrilldown(id, Drilltype.ByFamily);
+                    }}
                     src={FamilyIcon}
                   />
                 }
@@ -97,7 +131,10 @@ const ComponentCard = <T extends ComponentType>({
               children={
                 <img
                   className="card__icon"
-                  onClick={() => onView(id)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onView(id);
+                  }}
                   src={InfoIcon}
                 />
               }

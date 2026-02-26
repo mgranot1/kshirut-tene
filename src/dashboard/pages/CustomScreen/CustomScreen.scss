@@ -31,5 +31,19 @@
         background-color: rgb(234, 231, 231, 0.3);
       }
     }
+
+    &__selection-info {
+      margin-right: auto;
+      background-color: #ebf5ff;
+      color: #3b82f6;
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid #dbeafe;
+      display: flex;
+      align-items: center;
+      height: fit-content;
+    }
   }
 }
