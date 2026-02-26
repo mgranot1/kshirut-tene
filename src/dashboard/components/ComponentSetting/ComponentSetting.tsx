@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { useRecoilValue } from "recoil";
 import { useCurrentPath } from "../../../shared/hooks/useCurrentPath";
@@ -11,16 +11,15 @@ import { ComponentSettingMode } from "../../stores/componentSettingMode.store";
 import { kshirutTypeState } from "../../stores/kshirutType.store";
 import {
   ComponentType,
-  RangePercent,
   TComponentFilters,
   TComponentSetting,
 } from "../../types/component.types";
-import { emptyOrganizationalLevel } from "../../types/dashboardOrgLevel.types";
 import { IDashboardFiltersValue } from "../../types/filters.types";
 import MultiStepPopUp from "../MultiStepPopUp/MultiStepPopUp";
 import ComponentFilterSetting from "./ComponentFilterSetting";
+import { DEFAULT_COMPONENT_SETTING_FORM, FILTER_STEP_TITLES } from "./ComponentSetting.constants";
 import ComponentTypeSetting from "./ComponentTypeSetting";
-import FreeTextEditorStep from "../FreeTextCard/FreeTextEditorStep";
+import FreeTextEditorStep from "../FreeTextCard/FreeTextEditor";
 
 interface IComponentSettingProps {
   mode: ComponentSettingMode;
@@ -29,18 +28,10 @@ interface IComponentSettingProps {
   componentId: string;
 }
 
-export const defaultComponentSettingForm: TComponentSetting = {
-  id: "",
-  name: "",
-  type: ComponentType.Pie,
-  compColumn: 0,
-  compRow: 0,
-  orgLevel: { ...emptyOrganizationalLevel },
-  filters: [],
-  rangePercent: {
-    toSevereThreshold: 60,
-    toWarningThreshold: 80,
-  } as RangePercent,
+type Step = {
+  title: string;
+  content: ReactElement;
+  validate?: () => boolean;
 };
 
 const ComponentSetting = ({
@@ -52,7 +43,7 @@ const ComponentSetting = ({
   const screenId = useCurrentPath();
   const kshirutType = useRecoilValue(kshirutTypeState);
   const [componentSettingForm, setComponentSettingForm] =
-    useState<TComponentSetting>(defaultComponentSettingForm);
+    useState<TComponentSetting>(DEFAULT_COMPONENT_SETTING_FORM);
   const { componentFiltersFields } = useComponentFilters();
   const { refetch: refetchComponentTitle } = useGetComponentData(
     componentId,
@@ -69,14 +60,13 @@ const ComponentSetting = ({
     useGetComponentSetting(componentId);
 
   const handleSubmit = (mode: ComponentSettingMode) => {
-    const isFreeTextType = componentSettingForm.type === ComponentType.FreeText;
-    if (
-      !componentSettingForm.name ||
-      (!isFreeTextType && !componentSettingForm.orgLevel[0].length)
-    ) {
-      toast.error("מלא שדות חובה");
-      throw new Error("error");
+    const steps = getStepsByScreenMode();
+    const isValid = steps.every((step) => !step.validate || step.validate());
+
+    if (!isValid) {
+      throw new Error("Validation failed");
     }
+
     setOpen(false);
 
     const payload = componentSettingForm;
@@ -86,33 +76,37 @@ const ComponentSetting = ({
         screenId: screenId,
         componentSetting: payload,
       });
-      setComponentSettingForm(defaultComponentSettingForm);
+      setComponentSettingForm(DEFAULT_COMPONENT_SETTING_FORM);
     } else if (mode === ComponentSettingMode.Edit) {
       mutateUpdateComponentSetting({
         screenId: screenId,
         componentSetting: payload,
       });
-      setComponentSettingForm(defaultComponentSettingForm);
+      setComponentSettingForm(DEFAULT_COMPONENT_SETTING_FORM);
     }
   };
 
-  const typeStep = {
-    title: "הגדרת רכיב חדש",
+
+  const selectComponentTypeStep: Step = {
+    title: FILTER_STEP_TITLES[mode],
     content: (
       <ComponentTypeSetting
         componentSettingForm={componentSettingForm}
         setComponentSettingForm={setComponentSettingForm}
       />
     ),
+    validate: () => {
+      if (!componentSettingForm.type) {
+        toast.error("מלא שדות חובה");
+        return false;
+      }
+      return true;
+    },
+
   };
 
-  const filterStep = {
-    title:
-      mode === ComponentSettingMode.Edit
-        ? "הגדרת רכיב"
-        : mode === ComponentSettingMode.View
-          ? "הגדרות רכיב"
-          : "הגדרת רכיב חדש",
+  const selectFiltersStep: Step = {
+    title: FILTER_STEP_TITLES[mode],
     content: (
       <ComponentFilterSetting
         mode={mode}
@@ -120,28 +114,45 @@ const ComponentSetting = ({
         setComponentSettingForm={setComponentSettingForm}
       />
     ),
+    validate: () => {
+      if (!componentSettingForm.name || !componentSettingForm.orgLevel[0].length) {
+        toast.error("מלא שדות חובה");
+        return false;
+      }
+      return true;
+    },
   };
 
-  const freeTextStep = {
-    title: "עריכת טקסט חופשי",
+  const freeTextStep: Step = {
+    title: FILTER_STEP_TITLES[mode],
     content: (
       <FreeTextEditorStep
+        mode={mode}
         componentSettingForm={componentSettingForm}
         setComponentSettingForm={setComponentSettingForm}
       />
     ),
+    validate: () => {
+      if (!componentSettingForm.name) {
+        toast.error("מלא שדות חובה");
+        return false;
+      }
+      return true;
+    },
   };
 
-  const isFreeText = componentSettingForm.type === ComponentType.FreeText;
+  const stepsByComponentType: Record<ComponentType, Step[]> = {
+    [ComponentType.Pie]: [selectComponentTypeStep, selectFiltersStep],
+    [ComponentType.PieWithExpected]: [selectComponentTypeStep, selectFiltersStep],
+    [ComponentType.FreeText]: [selectComponentTypeStep, freeTextStep],
+  }
+  const getStepsByScreenMode = (): Step[] => {
 
-  const steps =
-    mode === ComponentSettingMode.New
-      ? isFreeText
-        ? [typeStep, freeTextStep]
-        : [typeStep, filterStep]
-      : isFreeText
-        ? [freeTextStep]
-        : [filterStep];
+    if (mode === ComponentSettingMode.New) {
+      return stepsByComponentType[componentSettingForm.type]
+    }
+    return stepsByComponentType[componentSettingForm.type].slice(1)
+  };
 
   const completeFieldTexts = async (
     filters: IDashboardFiltersValue<TComponentFilters>[]
@@ -180,7 +191,7 @@ const ComponentSetting = ({
 
   const handleClose = () => {
     setOpen((prev) => !prev);
-    setComponentSettingForm(defaultComponentSettingForm);
+    setComponentSettingForm(DEFAULT_COMPONENT_SETTING_FORM);
   };
 
   useEffect(() => {
@@ -197,7 +208,7 @@ const ComponentSetting = ({
   return (
     <MultiStepPopUp
       open={open}
-      steps={steps}
+      steps={getStepsByScreenMode().map(({ title, content }) => ({ title, content }))}
       onClose={handleClose}
       onSubmit={() => {
         handleSubmit(mode);

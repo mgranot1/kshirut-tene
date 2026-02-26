@@ -16,6 +16,12 @@ import {
 import GraphGenerator from "../GraphGenerator/GraphGenerator";
 import "./ComponentCard.scss";
 
+// Component types that support drilldown functionality
+const DRILLABLE_TYPES: ComponentType[] = [
+  ComponentType.Pie,
+  ComponentType.PieWithExpected,
+];
+
 interface IComponentCardProps<T extends ComponentType> {
   name: string;
   type: T;
@@ -68,7 +74,7 @@ const ComponentCard = <T extends ComponentType>({
           </div>
         ) : (
           <div className="card__buttons">
-            {onDrilldown && type !== ComponentType.FreeText && (
+            {onDrilldown && DRILLABLE_TYPES.includes(type) && (
               <Tooltip
                 title="צלילה לפי צו ארגון"
                 children={
@@ -80,7 +86,7 @@ const ComponentCard = <T extends ComponentType>({
                 }
               />
             )}
-            {onDrilldown && type !== ComponentType.FreeText && (
+            {onDrilldown && DRILLABLE_TYPES.includes(type) && (
               <Tooltip
                 title="צלילה לפי משפחות"
                 children={
