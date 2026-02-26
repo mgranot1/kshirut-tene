@@ -68,7 +68,7 @@ const ComponentCard = <T extends ComponentType>({
           </div>
         ) : (
           <div className="card__buttons">
-            {onDrilldown && type !== ComponentType.FreeText && (
+            {onDrilldown && (
               <Tooltip
                 title="צלילה לפי צו ארגון"
                 children={
@@ -80,7 +80,7 @@ const ComponentCard = <T extends ComponentType>({
                 }
               />
             )}
-            {onDrilldown && type !== ComponentType.FreeText && (
+            {onDrilldown && (
               <Tooltip
                 title="צלילה לפי משפחות"
                 children={

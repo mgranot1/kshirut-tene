@@ -10,7 +10,6 @@ export type TComponentFilters = {
 export type GraphDataMap = {
   [ComponentType.Pie]: PieData;
   [ComponentType.PieWithExpected]: PieWithExpectedData;
-  [ComponentType.FreeText]: FreeTextData;
 };
 
 export type IBaseComponent = {
@@ -70,7 +69,6 @@ export type TComponentToSAP = {
 export enum ComponentType {
   Pie = "01",
   PieWithExpected = "02",
-  FreeText = "03",
 }
 
 export type TComponentData<T extends ComponentType> = {
@@ -93,13 +91,4 @@ export type PieWithExpectedData = {
   kashirOn24: number;
   kashirOn48: number;
   kashirOn72: number;
-};
-
-export type FreeTextData = {
-  /** HTML content from contentEditable */
-  htmlContent: string;
-  /** Default font size for the editor container */
-  defaultFontSize: number;
-  /** Default text alignment */
-  defaultAlign: "right" | "center" | "left";
 };

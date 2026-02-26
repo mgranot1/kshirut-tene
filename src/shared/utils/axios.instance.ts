@@ -1,7 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import cookie from "react-cookie";
 import AuthService from "../../report/services/auth.service";
-import { installMockInterceptor } from "../../mock/mockInterceptor";
 
 const getBaseUrl = () => {
   if (process.env.NODE_ENV === "development")
@@ -109,12 +108,7 @@ AxiosInstance.interceptors.response.use(
     }
 
     return Promise.reject(error);
-  },
+  }
 );
-
-// Install mock interceptor for demo/local mode (no backend needed)
-if (import.meta.env.VITE_APP_NETWORK !== "army") {
-  installMockInterceptor(AxiosInstance as any);
-}
 
 export default AxiosInstance;

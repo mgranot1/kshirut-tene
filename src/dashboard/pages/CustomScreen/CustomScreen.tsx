@@ -28,7 +28,6 @@ import "./CustomScreen.scss";
 export const CardWidth = {
   [ComponentType.Pie]: 1,
   [ComponentType.PieWithExpected]: 2,
-  [ComponentType.FreeText]: 1,
 };
 
 export enum Drilltype {

@@ -22,7 +22,7 @@ import { IScreen } from "../types/screen.types";
 
 export const convertComponentRequest = (
   componentSetting: TComponentSetting,
-  screenId: IScreen["id"],
+  screenId: IScreen["id"]
 ): TComponentToSAP => {
   return {
     id: screenId,
@@ -42,7 +42,7 @@ export const convertComponentRequest = (
                 componentId: componentSetting.id,
                 field: filter.fieldKey as FilterType,
                 value: value.value,
-              })),
+              }))
             )
             .flat(),
           ...Object.keys(componentSetting.orgLevel)
@@ -55,8 +55,8 @@ export const convertComponentRequest = (
                     componentId: componentSetting.id,
                     field: FilterOrgLevel[key],
                     value: String(value.value),
-                  }) as IComponentFilter,
-              ),
+                  }) as IComponentFilter
+              )
             )
             .flat(),
         ],
@@ -74,7 +74,7 @@ export const convertComponentRequest = (
 
 export const getNewComponentLocation = (
   componnets: IBaseComponent[],
-  newComponentType: ComponentType,
+  newComponentType: ComponentType
 ): Pick<TComponentLocation, "compColumn" | "compRow"> => {
   const sortedComponentsByLocation = componnets
     ? [...componnets].sort((a, b) => {
@@ -111,10 +111,10 @@ export const getNewComponentLocation = (
 
 // Adapts the server response to match the component's data base on its ComponentSetting fields.
 export const adaptResponseToComponentSetting = (
-  componentResponse: TComponentHeader | undefined,
+  componentResponse: TComponentHeader | undefined
 ): TComponentSetting => {
   let componentSetting: TComponentSetting = JSON.parse(
-    JSON.stringify(defaultComponentSettingForm),
+    JSON.stringify(defaultComponentSettingForm)
   );
 
   if (!componentResponse?.id) return componentSetting;
@@ -156,7 +156,7 @@ export const adaptResponseToComponentSetting = (
       default:
         const filterIndex = componentSetting.filters.findIndex(
           (f: IDashboardFiltersValue<TComponentFilters>) =>
-            f.fieldKey === filter.field,
+            f.fieldKey === filter.field
         );
 
         if (filterIndex >= 0) {
@@ -167,7 +167,7 @@ export const adaptResponseToComponentSetting = (
                     ...f,
                     values: [...f.values, { text: "", value: filter.value }],
                   }
-                : f,
+                : f
           );
         } else {
           componentSetting.filters = [
@@ -192,13 +192,6 @@ export const adaptResponseToComponentSetting = (
   };
   componentSetting.compColumn = componentResponse.compColumn;
   componentSetting.compRow = componentResponse.compRow;
-
-  // Carry over freeTextData for FreeText components
-  if ((componentResponse as any).freeTextData) {
-    (componentSetting as any).freeTextData = (
-      componentResponse as any
-    ).freeTextData;
-  }
 
   return componentSetting;
 };

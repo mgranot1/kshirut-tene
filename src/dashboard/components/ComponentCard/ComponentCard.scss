@@ -5,9 +5,6 @@
   border-radius: 0.5rem;
   border: solid #e3e5e9 0.1rem;
   user-select: none;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 
   .card__header {
     min-height: 20%;
@@ -80,11 +77,9 @@
   // }
 
   .card__content {
-    flex: 1;
-    min-height: 0;
+    min-height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
 }

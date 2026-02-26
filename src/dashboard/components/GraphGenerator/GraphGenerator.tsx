@@ -3,14 +3,12 @@ import KshirutPieGraph from "../../../report/components/PieGraph/KshirutPieGraph
 import PieWithExpectedGraph from "../../../report/components/PieWithExpectedGraph/PieWithExpectedGraph";
 import { useNavigateFromGraph } from "../../hooks/useNavigateFromGraph";
 import { ScreenMode, screenModeState } from "../../stores/screenMode.store";
-import type {
-  FreeTextData,
+import {
+  ComponentType,
   GraphDataMap,
   IComponent,
   PieWithExpectedData,
 } from "../../types/component.types";
-import { ComponentType } from "../../types/component.types";
-import FreeTextCard from "../FreeTextCard/FreeTextCard";
 import "./GraphGenerator.scss";
 
 interface IGraphGeneratorProps<T extends ComponentType> {
@@ -57,14 +55,6 @@ const GraphGenerator = <T extends ComponentType>({
           toSevereThreshold={toSevereThreshold}
           kshirutData={graphData as PieWithExpectedData}
         />
-      );
-    case ComponentType.FreeText:
-      return (
-        <div className="graphGenerator__freeTextContainer">
-          <FreeTextCard
-            data={graphData as FreeTextData}
-          />
-        </div>
       );
     default:
       return <p>Unsupported graph type</p>;

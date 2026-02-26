@@ -20,7 +20,6 @@ import { IDashboardFiltersValue } from "../../types/filters.types";
 import MultiStepPopUp from "../MultiStepPopUp/MultiStepPopUp";
 import ComponentFilterSetting from "./ComponentFilterSetting";
 import ComponentTypeSetting from "./ComponentTypeSetting";
-import FreeTextEditorStep from "../FreeTextCard/FreeTextEditorStep";
 
 interface IComponentSettingProps {
   mode: ComponentSettingMode;
@@ -69,79 +68,59 @@ const ComponentSetting = ({
     useGetComponentSetting(componentId);
 
   const handleSubmit = (mode: ComponentSettingMode) => {
-    const isFreeTextType = componentSettingForm.type === ComponentType.FreeText;
     if (
       !componentSettingForm.name ||
-      (!isFreeTextType && !componentSettingForm.orgLevel[0].length)
+      !componentSettingForm.orgLevel[0].length
     ) {
       toast.error("מלא שדות חובה");
       throw new Error("error");
     }
     setOpen(false);
 
-    const payload = componentSettingForm;
-
     if (mode === ComponentSettingMode.New) {
       mutateCreateComponentSetting({
         screenId: screenId,
-        componentSetting: payload,
+        componentSetting: componentSettingForm,
       });
       setComponentSettingForm(defaultComponentSettingForm);
     } else if (mode === ComponentSettingMode.Edit) {
       mutateUpdateComponentSetting({
         screenId: screenId,
-        componentSetting: payload,
+        componentSetting: componentSettingForm,
       });
       setComponentSettingForm(defaultComponentSettingForm);
     }
   };
 
-  const typeStep = {
-    title: "הגדרת רכיב חדש",
-    content: (
-      <ComponentTypeSetting
-        componentSettingForm={componentSettingForm}
-        setComponentSettingForm={setComponentSettingForm}
-      />
-    ),
-  };
-
-  const filterStep = {
-    title:
-      mode === ComponentSettingMode.Edit
-        ? "הגדרת רכיב"
-        : mode === ComponentSettingMode.View
-          ? "הגדרות רכיב"
-          : "הגדרת רכיב חדש",
-    content: (
-      <ComponentFilterSetting
-        mode={mode}
-        componentSettingForm={componentSettingForm}
-        setComponentSettingForm={setComponentSettingForm}
-      />
-    ),
-  };
-
-  const freeTextStep = {
-    title: "עריכת טקסט חופשי",
-    content: (
-      <FreeTextEditorStep
-        componentSettingForm={componentSettingForm}
-        setComponentSettingForm={setComponentSettingForm}
-      />
-    ),
-  };
-
-  const isFreeText = componentSettingForm.type === ComponentType.FreeText;
+  const allSteps = [
+    {
+      title: "הגדרת רכיב חדש",
+      content: (
+        <ComponentTypeSetting
+          componentSettingForm={componentSettingForm}
+          setComponentSettingForm={setComponentSettingForm}
+        />
+      ),
+    },
+    {
+      title:
+        mode === ComponentSettingMode.Edit
+          ? "הגדרת רכיב"
+          : mode === ComponentSettingMode.View
+            ? "הגדרות רכיב"
+            : "הגדרת רכיב חדש",
+      content: (
+        <ComponentFilterSetting
+          mode={mode}
+          componentSettingForm={componentSettingForm}
+          setComponentSettingForm={setComponentSettingForm}
+        />
+      ),
+    },
+  ];
 
   const steps =
-    mode === ComponentSettingMode.New
-      ? isFreeText
-        ? [typeStep, freeTextStep]
-        : [typeStep, filterStep]
-      : isFreeText
-        ? [freeTextStep]
-        : [filterStep];
+    mode === ComponentSettingMode.New ? allSteps : allSteps.slice(1, 2);
 
   const completeFieldTexts = async (
     filters: IDashboardFiltersValue<TComponentFilters>[]
